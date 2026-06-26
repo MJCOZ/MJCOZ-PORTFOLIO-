@@ -10,7 +10,6 @@
   <meta property="og:title" content="معتز عوض | Mutaz — Graphic Designer" />
   <meta property="og:description" content="مصمم جرافيك وفريلانسر. شاهد أعمالي في التصميم والهوية البصرية والسوشل ميديا." />
   <meta property="og:image" content="assets/logo-mutaz.png" />
-  <meta property="og:type" content="website" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,28 +21,27 @@
 </head>
 <body>
 
-  <!-- ===== NOISE / GRID OVERLAY ===== -->
   <div class="grid-overlay" aria-hidden="true"></div>
 
-  <!-- ===== MARQUEE TOP ===== -->
+  <!-- ===== MARQUEE ===== -->
   <div class="marquee" aria-hidden="true">
     <div class="marquee__track">
-      <span data-ar="● تصميم جرافيك ● إدارة سوشل ميديا ● تسويق رقمي ● هوية بصرية ● محتوى إبداعي " data-en="● Graphic Design ● Social Media ● Digital Marketing ● Branding ● Creative Content ">● تصميم جرافيك ● إدارة سوشل ميديا ● تسويق رقمي ● هوية بصرية ● محتوى إبداعي </span>
-      <span data-ar="● تصميم جرافيك ● إدارة سوشل ميديا ● تسويق رقمي ● هوية بصرية ● محتوى إبداعي " data-en="● Graphic Design ● Social Media ● Digital Marketing ● Branding ● Creative Content ">● تصميم جرافيك ● إدارة سوشل ميديا ● تسويق رقمي ● هوية بصرية ● محتوى إبداعي </span>
+      <span data-ar="● تصميم جرافيك ● هوية بصرية ● شعارات ● قوائم طعام ● سوشل ميديا ● محتوى إبداعي " data-en="● Graphic Design ● Branding ● Logos ● Menus ● Social Media ● Creative Content ">● تصميم جرافيك ● هوية بصرية ● شعارات ● قوائم طعام ● سوشل ميديا ● محتوى إبداعي </span>
+      <span data-ar="● تصميم جرافيك ● هوية بصرية ● شعارات ● قوائم طعام ● سوشل ميديا ● محتوى إبداعي " data-en="● Graphic Design ● Branding ● Logos ● Menus ● Social Media ● Creative Content ">● تصميم جرافيك ● هوية بصرية ● شعارات ● قوائم طعام ● سوشل ميديا ● محتوى إبداعي </span>
     </div>
   </div>
 
-  <!-- ===== HEADER / NAV ===== -->
+  <!-- ===== HEADER ===== -->
   <header class="site-header" id="top">
     <div class="container nav">
       <a href="#top" class="logo"><img src="assets/logo-mutaz.png" alt="Mutaz — Graphic Designer" /></a>
 
       <nav class="nav__links" id="navLinks">
-        <a href="#about"    data-ar="من أنا"   data-en="About">من أنا</a>
-        <a href="#services" data-ar="خدماتي"   data-en="Services">خدماتي</a>
-        <a href="#work"     data-ar="أعمالي"   data-en="Work">أعمالي</a>
-        <a href="#resume"   data-ar="السيرة"   data-en="Resume">السيرة</a>
-        <a href="#contact"  data-ar="تواصل"    data-en="Contact">تواصل</a>
+        <a href="#about"    data-ar="من أنا"  data-en="About">من أنا</a>
+        <a href="#services" data-ar="خدماتي"  data-en="Services">خدماتي</a>
+        <a href="#work"     data-ar="أعمالي"  data-en="Work">أعمالي</a>
+        <a href="#resume"   data-ar="السيرة"  data-en="Resume">السيرة</a>
+        <a href="#contact"  data-ar="تواصل"   data-en="Contact">تواصل</a>
       </nav>
 
       <div class="nav__actions">
@@ -60,15 +58,9 @@
     <!-- ===== HERO ===== -->
     <section class="hero">
       <div class="container">
-        <p class="hero__eyebrow" data-ar="// مصمم — مدير سوشل ميديا — مسوّق" data-en="// Designer — Social Media Manager — Marketer">// مصمم — مدير سوشل ميديا — مسوّق</p>
-        <h1 class="hero__title">
-          <span class="line" data-ar="أصنع" data-en="I CRAFT">أصنع</span>
-          <span class="line line--accent" data-ar="علامات تجارية" data-en="BRANDS THAT">علامات تجارية</span>
-          <span class="line" data-ar="لا تُنسى." data-en="STICK.">لا تُنسى.</span>
-        </h1>
-        <p class="hero__lead" data-ar="أساعد العلامات التجارية على الظهور والنمو من خلال تصميم جريء، محتوى يلفت الانتباه، وحملات تسويقية تحقّق نتائج." data-en="I help brands show up and grow through bold design, scroll-stopping content, and marketing campaigns that actually deliver.">
-          أساعد العلامات التجارية على الظهور والنمو من خلال تصميم جريء، محتوى يلفت الانتباه، وحملات تسويقية تحقّق نتائج.
-        </p>
+        <p class="hero__eyebrow" id="heroEyebrow"></p>
+        <h1 class="hero__title" id="heroTitle"></h1>
+        <p class="hero__lead" id="heroLead"></p>
         <div class="hero__cta">
           <a href="#work" class="btn btn--primary" data-ar="شاهد أعمالي ↓" data-en="View My Work ↓">شاهد أعمالي ↓</a>
           <a href="#contact" class="btn btn--ghost" data-ar="لنعمل معاً" data-en="Let's Work">لنعمل معاً</a>
@@ -78,24 +70,7 @@
 
     <!-- ===== STATS ===== -->
     <section class="stats">
-      <div class="container stats__grid">
-        <div class="stat">
-          <span class="stat__num" data-count="120">0</span><span class="stat__plus">+</span>
-          <p class="stat__label" data-ar="مشروع مُنجز" data-en="Projects Done">مشروع مُنجز</p>
-        </div>
-        <div class="stat">
-          <span class="stat__num" data-count="50">0</span><span class="stat__plus">+</span>
-          <p class="stat__label" data-ar="عميل سعيد" data-en="Happy Clients">عميل سعيد</p>
-        </div>
-        <div class="stat">
-          <span class="stat__num" data-count="5">0</span><span class="stat__plus">+</span>
-          <p class="stat__label" data-ar="سنوات خبرة" data-en="Years Experience">سنوات خبرة</p>
-        </div>
-        <div class="stat">
-          <span class="stat__num" data-count="3">0</span><span class="stat__plus">M+</span>
-          <p class="stat__label" data-ar="مرّة وصول" data-en="Total Reach">مرّة وصول</p>
-        </div>
-      </div>
+      <div class="container stats__grid" id="statsGrid"></div>
     </section>
 
     <!-- ===== ABOUT ===== -->
@@ -107,27 +82,14 @@
         </div>
         <div class="about__grid">
           <div class="about__card">
-            <div class="about__avatar" aria-hidden="true" data-ar="م ع" data-en="MA">م ع</div>
-            <h3 data-ar="معتز عوض" data-en="Moataz Awad">معتز عوض</h3>
-            <p class="about__role" data-ar="مصمم جرافيك وفريلانسر" data-en="Graphic Designer & Freelancer">مصمم جرافيك وفريلانسر</p>
-            <ul class="about__meta">
-              <li><span data-ar="الموقع:" data-en="Location:">الموقع:</span> <strong data-ar="عن بُعد / عالمي" data-en="Remote / Worldwide">عن بُعد / عالمي</strong></li>
-              <li><span data-ar="التوفّر:" data-en="Status:">التوفّر:</span> <strong class="status-open" data-ar="متاح للعمل" data-en="Available">متاح للعمل</strong></li>
-              <li><span data-ar="اللغات:" data-en="Languages:">اللغات:</span> <strong data-ar="عربي / إنجليزي" data-en="Arabic / English">عربي / إنجليزي</strong></li>
-            </ul>
+            <div class="about__avatar" id="aboutAvatar" aria-hidden="true"></div>
+            <h3 id="aboutName"></h3>
+            <p class="about__role" id="aboutRole"></p>
+            <ul class="about__meta" id="aboutMeta"></ul>
           </div>
           <div class="about__text">
-            <p data-ar="مصمم جرافيك وفريلانسر بخبرة تمتد لأكثر من 5 سنوات في مجال التصميم الإبداعي وصناعة الهوية البصرية. قدمت خدماتي لأكثر من 50 عميلاً من مختلف القطاعات، وأسهمت في تنفيذ مشاريع احترافية شملت تصميم الهويات التجارية، الشعارات، قوائم الطعام (Menu)، منشورات وإعلانات وسائل التواصل الاجتماعي، وتصميم المحتوى التسويقي الذي يعزز حضور العلامات التجارية ويحقق أهدافها." data-en="A graphic designer and freelancer with over 5 years of experience in creative design and brand identity. I've served more than 50 clients across different sectors, delivering professional projects spanning brand identities, logos, food menus, social media posts and ads, and marketing content that strengthens brands' presence and achieves their goals.">
-              مصمم جرافيك وفريلانسر بخبرة تمتد لأكثر من 5 سنوات في مجال التصميم الإبداعي وصناعة الهوية البصرية. قدمت خدماتي لأكثر من 50 عميلاً من مختلف القطاعات، وأسهمت في تنفيذ مشاريع احترافية شملت تصميم الهويات التجارية، الشعارات، قوائم الطعام (Menu)، منشورات وإعلانات وسائل التواصل الاجتماعي، وتصميم المحتوى التسويقي الذي يعزز حضور العلامات التجارية ويحقق أهدافها.
-            </p>
-            <p data-ar="أتميز بالجمع بين الإبداع والفهم التسويقي، مع الحرص على تقديم تصاميم عصرية وعالية الجودة تعكس هوية العميل وتساعده على الوصول إلى جمهوره المستهدف. أسعى دائماً إلى تطوير مهاراتي ومواكبة أحدث اتجاهات التصميم لضمان تقديم نتائج احترافية تتجاوز التوقعات." data-en="I combine creativity with marketing insight, focused on delivering modern, high-quality designs that reflect each client's identity and help them reach their target audience. I'm always developing my skills and keeping up with the latest design trends to deliver professional results that exceed expectations.">
-              أتميز بالجمع بين الإبداع والفهم التسويقي، مع الحرص على تقديم تصاميم عصرية وعالية الجودة تعكس هوية العميل وتساعده على الوصول إلى جمهوره المستهدف. أسعى دائماً إلى تطوير مهاراتي ومواكبة أحدث اتجاهات التصميم لضمان تقديم نتائج احترافية تتجاوز التوقعات.
-            </p>
-            <div class="about__tags">
-              <span>Photoshop</span><span>Illustrator</span><span>Figma</span>
-              <span>Premiere</span><span>After Effects</span><span>Canva</span>
-              <span>Meta Ads</span><span>Google Ads</span><span>SEO</span>
-            </div>
+            <div id="aboutBio"></div>
+            <div class="about__tags" id="aboutTags"></div>
           </div>
         </div>
       </div>
@@ -140,54 +102,24 @@
           <span class="section__index">02</span>
           <h2 class="section__title" data-ar="ماذا أقدّم" data-en="What I Do">ماذا أقدّم</h2>
         </div>
-        <div class="services__grid">
-
-          <article class="service-card">
-            <span class="service-card__num">A</span>
-            <h3 data-ar="تصميم جرافيك وهوية بصرية" data-en="Graphic & Brand Design">تصميم جرافيك وهوية بصرية</h3>
-            <p data-ar="شعارات، هويات بصرية كاملة، تصاميم منشورات، ومطبوعات تعكس شخصية علامتك التجارية." data-en="Logos, full visual identities, post designs, and print that reflect your brand's personality.">شعارات، هويات بصرية كاملة، تصاميم منشورات، ومطبوعات تعكس شخصية علامتك التجارية.</p>
-          </article>
-
-          <article class="service-card">
-            <span class="service-card__num">B</span>
-            <h3 data-ar="إدارة سوشل ميديا" data-en="Social Media Management">إدارة سوشل ميديا</h3>
-            <p data-ar="خطط محتوى، جدولة، كتابة، وإدارة كاملة لحساباتك على إنستغرام وتيك توك وغيرها." data-en="Content plans, scheduling, copywriting, and full management of your Instagram, TikTok and more.">خطط محتوى، جدولة، كتابة، وإدارة كاملة لحساباتك على إنستغرام وتيك توك وغيرها.</p>
-          </article>
-
-          <article class="service-card">
-            <span class="service-card__num">C</span>
-            <h3 data-ar="حملات تسويقية مدفوعة" data-en="Paid Marketing Campaigns">حملات تسويقية مدفوعة</h3>
-            <p data-ar="إعداد وإدارة حملات إعلانية على Meta وGoogle مع استهداف دقيق وتحليل للنتائج." data-en="Setup and management of Meta & Google ad campaigns with precise targeting and result analysis.">إعداد وإدارة حملات إعلانية على Meta وGoogle مع استهداف دقيق وتحليل للنتائج.</p>
-          </article>
-
-          <article class="service-card">
-            <span class="service-card__num">D</span>
-            <h3 data-ar="محتوى ومونتاج" data-en="Content & Editing">محتوى ومونتاج</h3>
-            <p data-ar="تصوير، مونتاج فيديو، ريلز، وموشن جرافيك يجذب الجمهور ويرفع نسب التفاعل." data-en="Photography, video editing, reels, and motion graphics that capture attention and boost engagement.">تصوير، مونتاج فيديو، ريلز، وموشن جرافيك يجذب الجمهور ويرفع نسب التفاعل.</p>
-          </article>
-
-        </div>
+        <div class="services__grid" id="servicesGrid"></div>
       </div>
     </section>
 
-    <!-- ===== WORK / PORTFOLIO ===== -->
+    <!-- ===== WORK ===== -->
     <section class="section work" id="work">
       <div class="container">
         <div class="section__head">
           <span class="section__index">03</span>
           <h2 class="section__title" data-ar="أعمالي المختارة" data-en="Selected Work">أعمالي المختارة</h2>
         </div>
-
         <div class="filters" id="filters">
-          <button class="filter is-active" data-filter="all"       data-ar="الكل"        data-en="All">الكل</button>
-          <button class="filter"           data-filter="branding"  data-ar="هوية بصرية"  data-en="Branding">هوية بصرية</button>
-          <button class="filter"           data-filter="social"    data-ar="سوشل ميديا"  data-en="Social">سوشل ميديا</button>
-          <button class="filter"           data-filter="marketing" data-ar="تسويق"       data-en="Marketing">تسويق</button>
+          <button class="filter is-active" data-filter="all"       data-ar="الكل"       data-en="All">الكل</button>
+          <button class="filter"           data-filter="branding"  data-ar="هوية بصرية" data-en="Branding">هوية بصرية</button>
+          <button class="filter"           data-filter="social"    data-ar="سوشل ميديا" data-en="Social">سوشل ميديا</button>
+          <button class="filter"           data-filter="marketing" data-ar="تسويق"      data-en="Marketing">تسويق</button>
         </div>
-
-        <div class="work__grid" id="workGrid">
-          <!-- Cards injected by JS from js/projects.js -->
-        </div>
+        <div class="work__grid" id="workGrid"></div>
       </div>
     </section>
 
@@ -197,49 +129,18 @@
         <div class="section__head">
           <span class="section__index">04</span>
           <h2 class="section__title" data-ar="السيرة الذاتية" data-en="Resume">السيرة الذاتية</h2>
-          <a href="assets/cv.pdf" class="btn btn--primary resume__download" download data-ar="تحميل PDF ↓" data-en="Download PDF ↓">تحميل PDF ↓</a>
+          <a href="assets/cv.pdf" id="cvLink" class="btn btn--primary resume__download" download data-ar="تحميل PDF ↓" data-en="Download PDF ↓">تحميل PDF ↓</a>
         </div>
-
         <div class="resume__cols">
           <div class="resume__col">
             <h3 class="resume__col-title" data-ar="الخبرات" data-en="Experience">الخبرات</h3>
-            <div class="timeline">
-              <div class="timeline__item">
-                <span class="timeline__date">2023 — <span data-ar="الآن" data-en="Now">الآن</span></span>
-                <h4 data-ar="مدير تسويق رقمي مستقل" data-en="Freelance Digital Marketer">مدير تسويق رقمي مستقل</h4>
-                <p data-ar="إدارة الحضور الرقمي وحملات الإعلان لعملاء متعددين." data-en="Managing digital presence and ad campaigns for multiple clients.">إدارة الحضور الرقمي وحملات الإعلان لعملاء متعددين.</p>
-              </div>
-              <div class="timeline__item">
-                <span class="timeline__date">2021 — 2023</span>
-                <h4 data-ar="مصمم ومنشئ محتوى" data-en="Designer & Content Creator">مصمم ومنشئ محتوى</h4>
-                <p data-ar="تصميم الهويات البصرية وإدارة محتوى السوشل ميديا في وكالة تسويق." data-en="Designed brand identities and managed social content at a marketing agency.">تصميم الهويات البصرية وإدارة محتوى السوشل ميديا في وكالة تسويق.</p>
-              </div>
-              <div class="timeline__item">
-                <span class="timeline__date">2019 — 2021</span>
-                <h4 data-ar="مصمم جرافيك" data-en="Graphic Designer">مصمم جرافيك</h4>
-                <p data-ar="تصميم مطبوعات ومواد تسويقية لعلامات تجارية محلية." data-en="Designed print and marketing materials for local brands.">تصميم مطبوعات ومواد تسويقية لعلامات تجارية محلية.</p>
-              </div>
-            </div>
+            <div class="timeline" id="expList"></div>
           </div>
-
           <div class="resume__col">
             <h3 class="resume__col-title" data-ar="المهارات" data-en="Skills">المهارات</h3>
-            <div class="skills">
-              <div class="skill"><div class="skill__top"><span data-ar="تصميم جرافيك" data-en="Graphic Design">تصميم جرافيك</span><span>95%</span></div><div class="skill__bar"><i style="width:95%"></i></div></div>
-              <div class="skill"><div class="skill__top"><span data-ar="إدارة سوشل ميديا" data-en="Social Media">إدارة سوشل ميديا</span><span>90%</span></div><div class="skill__bar"><i style="width:90%"></i></div></div>
-              <div class="skill"><div class="skill__top"><span data-ar="التسويق الرقمي" data-en="Digital Marketing">التسويق الرقمي</span><span>88%</span></div><div class="skill__bar"><i style="width:88%"></i></div></div>
-              <div class="skill"><div class="skill__top"><span data-ar="مونتاج وموشن" data-en="Editing & Motion">مونتاج وموشن</span><span>80%</span></div><div class="skill__bar"><i style="width:80%"></i></div></div>
-              <div class="skill"><div class="skill__top"><span data-ar="كتابة المحتوى" data-en="Copywriting">كتابة المحتوى</span><span>85%</span></div><div class="skill__bar"><i style="width:85%"></i></div></div>
-            </div>
-
+            <div class="skills" id="skillsList"></div>
             <h3 class="resume__col-title" style="margin-top:2.5rem" data-ar="التعليم" data-en="Education">التعليم</h3>
-            <div class="timeline">
-              <div class="timeline__item">
-                <span class="timeline__date">2015 — 2019</span>
-                <h4 data-ar="بكالوريوس تصميم جرافيك / إعلام" data-en="BA in Graphic Design / Media">بكالوريوس تصميم جرافيك / إعلام</h4>
-                <p data-ar="درجة في التصميم والإعلام الرقمي." data-en="Degree in design and digital media.">درجة في التصميم والإعلام الرقمي.</p>
-              </div>
-            </div>
+            <div class="timeline" id="eduList"></div>
           </div>
         </div>
       </div>
@@ -252,20 +153,7 @@
           <span class="section__index">05</span>
           <h2 class="section__title" data-ar="آراء العملاء" data-en="Client Words">آراء العملاء</h2>
         </div>
-        <div class="testi__grid">
-          <blockquote class="testi">
-            <p data-ar="«ضاعف حضورنا على إنستغرام خلال شهرين فقط. عمل احترافي ونتائج ملموسة.»" data-en="“Doubled our Instagram presence in just two months. Professional work and real results.”">«ضاعف حضورنا على إنستغرام خلال شهرين فقط. عمل احترافي ونتائج ملموسة.»</p>
-            <footer><strong data-ar="سارة م." data-en="Sara M.">سارة م.</strong> — <span data-ar="صاحبة متجر" data-en="Shop Owner">صاحبة متجر</span></footer>
-          </blockquote>
-          <blockquote class="testi">
-            <p data-ar="«الهوية البصرية التي صممها غيّرت شكل علامتنا تماماً. ننصح به بشدة.»" data-en="“The brand identity he designed completely transformed our look. Highly recommended.”">«الهوية البصرية التي صممها غيّرت شكل علامتنا تماماً. ننصح به بشدة.»</p>
-            <footer><strong data-ar="أحمد ك." data-en="Ahmed K.">أحمد ك.</strong> — <span data-ar="مدير شركة ناشئة" data-en="Startup Founder">مدير شركة ناشئة</span></footer>
-          </blockquote>
-          <blockquote class="testi">
-            <p data-ar="«حملاته الإعلانية رفعت مبيعاتنا بشكل ملحوظ بميزانية معقولة.»" data-en="“His ad campaigns boosted our sales noticeably on a reasonable budget.”">«حملاته الإعلانية رفعت مبيعاتنا بشكل ملحوظ بميزانية معقولة.»</p>
-            <footer><strong data-ar="ليلى ع." data-en="Layla A.">ليلى ع.</strong> — <span data-ar="مديرة تسويق" data-en="Marketing Lead">مديرة تسويق</span></footer>
-          </blockquote>
-        </div>
+        <div class="testi__grid" id="testiGrid"></div>
       </div>
     </section>
 
@@ -278,12 +166,8 @@
         </div>
         <div class="contact__grid">
           <div class="contact__info">
-            <p class="contact__lead" data-ar="لديك فكرة أو مشروع؟ أرسل لي رسالة وسأرد عليك خلال 24 ساعة." data-en="Got an idea or a project? Send me a message and I'll reply within 24 hours.">لديك فكرة أو مشروع؟ أرسل لي رسالة وسأرد عليك خلال 24 ساعة.</p>
-            <ul class="contact__list">
-              <li><span>EMAIL</span><a href="mailto:mezoo.bk@gmail.com">mezoo.bk@gmail.com</a></li>
-              <li><span>INSTAGRAM</span><a href="https://instagram.com/mjcoz1" target="_blank" rel="noopener">@mjcoz1</a></li>
-              <li><span>WHATSAPP</span><a href="https://wa.me/966558779714" target="_blank" rel="noopener" dir="ltr">+966 55 877 9714</a></li>
-            </ul>
+            <p class="contact__lead" id="contactLead"></p>
+            <ul class="contact__list" id="contactList"></ul>
           </div>
 
           <form class="contact__form" id="contactForm" action="https://formspree.io/f/your-id" method="POST">
@@ -317,7 +201,6 @@
     </div>
   </footer>
 
-  <script src="js/projects.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

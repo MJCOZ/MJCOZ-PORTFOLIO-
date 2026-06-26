@@ -1,0 +1,30 @@
+# Render blueprint — deploy with one click.
+# Docs: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: mutaz-portfolio
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      # Set your admin panel password in the Render dashboard (sync:false = secret).
+      - key: ADMIN_PASSWORD
+        sync: false
+      # Auto-generated signing secret for admin sessions.
+      - key: ADMIN_SECRET
+        generateValue: true
+
+    # ---------------------------------------------------------------
+    # PERSISTENCE (recommended): the free plan's disk is ephemeral, so
+    # edits made in the admin panel are lost on every redeploy/restart.
+    # To keep them, upgrade the plan and uncomment the block below, then
+    # add these env vars:
+    #   CONTENT_FILE = /var/data/content.json
+    #   UPLOAD_DIR   = /var/data/uploads
+    #
+    # disk:
+    #   name: portfolio-data
+    #   mountPath: /var/data
+    #   sizeGB: 1
+    # ---------------------------------------------------------------

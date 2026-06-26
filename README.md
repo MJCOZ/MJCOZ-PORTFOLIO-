@@ -1,69 +1,75 @@
-# MJ COZ — Brutalism Portfolio
+# Mutaz — Brutalism Portfolio + Admin
 
-موقع بورتفوليو احترافي بتصميم **Brutalism** لعرض أعمال التصميم وإدارة السوشل ميديا والتسويق الرقمي.
-مبني بـ HTML/CSS/JS خالص — بدون أي إطار عمل أو خطوة بناء.
+بورتفوليو **معتز عوض** بتصميم **Brutalism**، مع **لوحة تحكم داخلية** لإدارة كل المحتوى
+(الأعمال، النبذة، الإحصائيات، الخدمات، السيرة، الآراء، التواصل) ورفع الصور — بدون لمس الكود.
+مبني على **Node + Express**، ويعمل أيضاً كموقع ثابت.
 
-A professional **Brutalism**-style portfolio for a designer / social media manager / digital marketer.
-Pure HTML/CSS/JS — no framework, no build step.
+A **Brutalism** portfolio for Mutaz Awad with a built-in **admin panel** to manage all
+content and upload images — no code editing. Built on **Node + Express**; also works as a static site.
 
 ---
 
 ## ✨ المميزات / Features
 
-- 🎨 تصميم Brutalism جريء (حدود سميكة، ظلال صلبة، خطوط عريضة)
-- 🌍 ثنائي اللغة (عربي RTL / إنجليزي LTR) بزر تبديل واحد — يحفظ تفضيلك
-- 📱 متجاوب بالكامل مع قائمة جوال
-- 🧩 أقسام: من أنا، الخدمات، معرض الأعمال مع فلترة، السيرة الذاتية، آراء العملاء، التواصل
-- ⚡ عدّادات متحركة، أشرطة مهارات، وكشف عند التمرير
-- 📨 نموذج تواصل يعمل عبر Formspree أو يرجع تلقائياً إلى البريد
+- 🎨 تصميم Brutalism جريء بهوية معتز (شعار + اللون الكحلي `#282868`)
+- 🌍 ثنائي اللغة (عربي RTL / إنجليزي LTR) بزر تبديل واحد
+- 🛠️ **لوحة تحكم** على `/admin` (محمية بكلمة مرور) — أضف/احذف أعمالاً، ارفع صوراً، عدّل كل التفاصيل
+- 💾 المحتوى كله في `data/content.json` (مصدر واحد) — الموقع يقرأ منه ديناميكياً
+- 📱 متجاوب بالكامل + أنيميشن (عدّادات، أشرطة مهارات، كشف عند التمرير)
 
 ---
 
 ## 🚀 التشغيل المحلي / Run locally
 
-لا يحتاج بناء. افتح `index.html` مباشرة، أو شغّل خادماً بسيطاً:
-
 ```bash
-python3 -m http.server 8000
-# ثم افتح: http://localhost:8000
+npm install
+ADMIN_PASSWORD="ضع-كلمة-مرور-قوية" npm start
+# الموقع:        http://localhost:3000
+# لوحة التحكم:   http://localhost:3000/admin
 ```
+
+| المتغيّر | الوصف | الافتراضي |
+|---|---|---|
+| `ADMIN_PASSWORD` | كلمة مرور لوحة التحكم | `change-me` (غيّرها!) |
+| `ADMIN_SECRET` | مفتاح توقيع الجلسات | عشوائي عند الإقلاع |
+| `PORT` | منفذ الخادم | `3000` |
+| `CONTENT_FILE` | مسار ملف المحتوى | `data/content.json` |
+| `UPLOAD_DIR` | مجلد الصور المرفوعة | `assets/` |
 
 ---
 
-## 🛠️ التخصيص / Customize
+## 🖥️ لوحة التحكم / Admin panel
 
-| ما تريد تغييره | أين |
-|---|---|
-| الاسم، النصوص، الروابط | `index.html` (نص عربي في `data-ar` وإنجليزي في `data-en`) |
-| الأعمال (إضافة/حذف مشاريع) | `js/projects.js` |
-| الألوان والخطوط | متغيّرات `:root` في أعلى `css/style.css` |
-| الإحصائيات | سمة `data-count` في قسم `.stats` بـ `index.html` |
-| ملف السيرة الذاتية | ضع ملفك باسم `assets/cv.pdf` |
-| نموذج التواصل | استبدل `your-id` في `action` بمعرّف Formspree، وإلا سيفتح البريد تلقائياً |
-
-### إضافة صور للمشاريع
-في `js/projects.js`، ضع مسار الصورة في الحقل `img`، مثلاً:
-```js
-img: "assets/project1.jpg"
-```
-وإلا سيظهر مستطيل ملوّن بالاسم المختصر.
-
-### الألوان (في `css/style.css`)
-```css
---accent:   #e8ff00;  /* اللون المميز  */
---accent-2: #ff3b30;  /* أحمر          */
---accent-3: #2563ff;  /* أزرق          */
-```
+1. افتح `/admin` وأدخل `ADMIN_PASSWORD`.
+2. كل قسم في لوحة قابلة للطي: عدّل الحقول، أضف/احذف عناصر (أعمال، خدمات، آراء…).
+3. للأعمال: اكتب العنوان والوصف بالعربي والإنجليزي، اختر التصنيف واللون، و**ارفع صورة** أو ضع مسارها.
+4. اضغط **حفظ التغييرات** → ثم حدّث الموقع لرؤية النتيجة.
 
 ---
 
-## 🌐 النشر / Deploy
+## 🌐 النشر على Render / Deploy to Render
 
-أي من هذه الخيارات (الموقع ثابت بالكامل):
+### الطريقة الأسهل (Blueprint)
+1. ارفع المشروع إلى GitHub.
+2. على Render: **New → Blueprint** واختر المستودع (يقرأ `render.yaml` تلقائياً).
+3. عند الإنشاء، اضبط متغيّر **`ADMIN_PASSWORD`** بكلمة مرور قوية.
+4. انتظر النشر → موقعك جاهز على رابط `*.onrender.com`.
 
-- **GitHub Pages:** Settings → Pages → فرع `main` / المجلد الجذر
-- **Netlify / Vercel:** اسحب المجلد أو اربط المستودع (بدون أوامر بناء)
-- أي استضافة ثابتة (ارفع كل الملفات كما هي)
+### يدوياً (Web Service)
+- **Build:** `npm install` — **Start:** `node server.js`
+- أضف متغيّر البيئة `ADMIN_PASSWORD`.
+
+### ⚠️ حفظ التعديلات على Render (مهم)
+الخطة المجانية تستخدم قرصاً **مؤقتاً** — أي تعديلات من لوحة التحكم (والصور المرفوعة)
+**تُمسح عند كل إعادة نشر/تشغيل**. لجعلها دائمة:
+
+1. فعّل خطة مدفوعة وأضف **Persistent Disk** بمسار `/var/data` (انظر `render.yaml`).
+2. أضف المتغيّرين:
+   - `CONTENT_FILE = /var/data/content.json`
+   - `UPLOAD_DIR = /var/data/uploads`
+
+بدون قرص دائم: المحتوى الأساسي من `data/content.json` يبقى (لأنه في المستودع)، لكن
+التعديلات الجديدة تُفقد عند إعادة النشر. بديل مجاني: عدّل عبر اللوحة محلياً ثم ارفع `data/content.json` إلى GitHub.
 
 ---
 
@@ -71,9 +77,15 @@ img: "assets/project1.jpg"
 
 ```
 .
-├── index.html        # كل الأقسام والمحتوى
-├── css/style.css     # تصميم Brutalism كامل
-├── js/projects.js    # بيانات المشاريع (عدّلها بسهولة)
-├── js/main.js        # اللغة، الفلترة، الأنيميشن، النموذج
-└── assets/           # ضع هنا الصور و cv.pdf
+├── server.js          # خادم Express + API + رفع الصور
+├── package.json
+├── render.yaml        # إعداد النشر على Render
+├── index.html         # الموقع (هيكل يُملأ ديناميكياً)
+├── css/style.css      # تصميم Brutalism
+├── js/main.js         # يجلب المحتوى ويبني كل الأقسام
+├── data/content.json  # كل المحتوى (مصدر واحد)
+├── admin/             # لوحة التحكم (index.html, admin.css, admin.js)
+└── assets/            # الشعار، صور الأعمال، cv.pdf
 ```
+
+> لإضافة ملف سيرتك: ضع `assets/cv.pdf` (أو غيّر الرابط من لوحة التحكم).

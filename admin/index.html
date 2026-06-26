@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>لوحة التحكم — Mutaz Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <div id="login" class="login">
+    <form id="loginForm" class="login__card">
+      <h1>لوحة التحكم</h1>
+      <p class="muted">أدخل كلمة المرور لإدارة محتوى الموقع</p>
+      <input type="password" id="password" placeholder="كلمة المرور" autocomplete="current-password" required />
+      <button type="submit" class="btn btn--primary">دخول</button>
+      <p id="loginErr" class="err" hidden></p>
+    </form>
+  </div>
+
+  <!-- APP -->
+  <div id="app" hidden>
+    <header class="topbar">
+      <strong>محتوى الموقع</strong>
+      <div class="topbar__actions">
+        <a href="/" target="_blank" class="btn btn--ghost">عرض الموقع ↗</a>
+        <button id="saveBtn" class="btn btn--primary">حفظ التغييرات</button>
+        <button id="logoutBtn" class="btn btn--ghost">خروج</button>
+      </div>
+    </header>
+
+    <p id="saveNote" class="save-note" hidden></p>
+
+    <main id="editor" class="editor"><!-- sections injected --></main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

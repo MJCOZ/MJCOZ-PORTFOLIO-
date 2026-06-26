@@ -1,0 +1,83 @@
+{
+  "hero": {
+    "eyebrow": { "ar": "// مصمم جرافيك — فريلانسر — هوية بصرية", "en": "// Graphic Designer — Freelancer — Branding" },
+    "title": [
+      { "text": { "ar": "أصنع", "en": "I CRAFT" }, "accent": false },
+      { "text": { "ar": "علامات تجارية", "en": "BRANDS THAT" }, "accent": true },
+      { "text": { "ar": "لا تُنسى.", "en": "STICK." }, "accent": false }
+    ],
+    "lead": {
+      "ar": "أساعد العلامات التجارية على الظهور والنمو من خلال تصميم جريء، هوية بصرية متكاملة، ومحتوى يلفت الانتباه ويحقّق نتائج.",
+      "en": "I help brands show up and grow through bold design, complete visual identity, and content that grabs attention and delivers results."
+    }
+  },
+  "stats": [
+    { "num": 120, "plus": "+", "label": { "ar": "مشروع مُنجز", "en": "Projects Done" } },
+    { "num": 50, "plus": "+", "label": { "ar": "عميل سعيد", "en": "Happy Clients" } },
+    { "num": 5, "plus": "+", "label": { "ar": "سنوات خبرة", "en": "Years Experience" } },
+    { "num": 3, "plus": "M+", "label": { "ar": "مرّة وصول", "en": "Total Reach" } }
+  ],
+  "about": {
+    "name": { "ar": "معتز عوض", "en": "Moataz Awad" },
+    "role": { "ar": "مصمم جرافيك وفريلانسر", "en": "Graphic Designer & Freelancer" },
+    "avatar": { "ar": "م ع", "en": "MA" },
+    "meta": [
+      { "label": { "ar": "الموقع:", "en": "Location:" }, "value": { "ar": "عن بُعد / عالمي", "en": "Remote / Worldwide" }, "status": false },
+      { "label": { "ar": "التوفّر:", "en": "Status:" }, "value": { "ar": "متاح للعمل", "en": "Available" }, "status": true },
+      { "label": { "ar": "اللغات:", "en": "Languages:" }, "value": { "ar": "عربي / إنجليزي", "en": "Arabic / English" }, "status": false }
+    ],
+    "bio": [
+      {
+        "ar": "مصمم جرافيك وفريلانسر بخبرة تمتد لأكثر من 5 سنوات في مجال التصميم الإبداعي وصناعة الهوية البصرية. قدمت خدماتي لأكثر من 50 عميلاً من مختلف القطاعات، وأسهمت في تنفيذ مشاريع احترافية شملت تصميم الهويات التجارية، الشعارات، قوائم الطعام (Menu)، منشورات وإعلانات وسائل التواصل الاجتماعي، وتصميم المحتوى التسويقي الذي يعزز حضور العلامات التجارية ويحقق أهدافها.",
+        "en": "A graphic designer and freelancer with over 5 years of experience in creative design and brand identity. I've served more than 50 clients across different sectors, delivering professional projects spanning brand identities, logos, food menus, social media posts and ads, and marketing content that strengthens brands' presence and achieves their goals."
+      },
+      {
+        "ar": "أتميز بالجمع بين الإبداع والفهم التسويقي، مع الحرص على تقديم تصاميم عصرية وعالية الجودة تعكس هوية العميل وتساعده على الوصول إلى جمهوره المستهدف. أسعى دائماً إلى تطوير مهاراتي ومواكبة أحدث اتجاهات التصميم لضمان تقديم نتائج احترافية تتجاوز التوقعات.",
+        "en": "I combine creativity with marketing insight, focused on delivering modern, high-quality designs that reflect each client's identity and help them reach their target audience. I'm always developing my skills and keeping up with the latest design trends to deliver professional results that exceed expectations."
+      }
+    ],
+    "tags": ["Photoshop", "Illustrator", "Figma", "Premiere", "After Effects", "Canva", "Meta Ads", "Google Ads", "SEO"]
+  },
+  "services": [
+    { "num": "A", "title": { "ar": "تصميم جرافيك وهوية بصرية", "en": "Graphic & Brand Design" }, "desc": { "ar": "شعارات، هويات بصرية كاملة، تصاميم منشورات، ومطبوعات تعكس شخصية علامتك التجارية.", "en": "Logos, full visual identities, post designs, and print that reflect your brand's personality." } },
+    { "num": "B", "title": { "ar": "إدارة سوشل ميديا", "en": "Social Media Management" }, "desc": { "ar": "خطط محتوى، جدولة، كتابة، وإدارة كاملة لحساباتك على إنستغرام وتيك توك وغيرها.", "en": "Content plans, scheduling, copywriting, and full management of your Instagram, TikTok and more." } },
+    { "num": "C", "title": { "ar": "قوائم الطعام والمطاعم", "en": "Menus & Restaurants" }, "desc": { "ar": "تصميم قوائم طعام (Menu) ومواد بصرية للمطاعم والكافيهات تبرز منتجاتك بشكل شهيّ.", "en": "Menu design and visual materials for restaurants and cafés that make your products look irresistible." } },
+    { "num": "D", "title": { "ar": "محتوى ومونتاج", "en": "Content & Editing" }, "desc": { "ar": "تصوير، مونتاج فيديو، ريلز، وموشن جرافيك يجذب الجمهور ويرفع نسب التفاعل.", "en": "Photography, video editing, reels, and motion graphics that capture attention and boost engagement." } }
+  ],
+  "projects": [
+    { "id": "p1", "title": { "ar": "عجينة — ميني بيتزا", "en": "Ajinah — Mini Pizza" }, "desc": { "ar": "تصميم منشور إعلاني لإطلاق الميني بيتزا", "en": "Promo post for the mini pizza launch" }, "category": "social", "label": "AJINAH", "color": "#cfa372", "img": "assets/social-1-minipizza.png" },
+    { "id": "p2", "title": { "ar": "عجينة — تايبوغرافي", "en": "Ajinah — Typography" }, "desc": { "ar": "تصميم بصري بتكرار النص لإبراز المنتج", "en": "Typographic visual highlighting the product" }, "category": "social", "label": "MINI PIZZA", "color": "#cfa372", "img": "assets/social-2-minipizza-type.png" },
+    { "id": "p3", "title": { "ar": "عجينة — تشكيلة الصندوق", "en": "Ajinah — One Box" }, "desc": { "ar": "منشور يعرّف بصندوق التشكيلة المتنوعة", "en": "Post introducing the variety box" }, "category": "social", "label": "ONE BOX", "color": "#cdb293", "img": "assets/social-3-box.png" },
+    { "id": "p4", "title": { "ar": "عجينة — اختر طعمك", "en": "Ajinah — Your Taste" }, "desc": { "ar": "تصميم بفكرة شريط بحث تفاعلي", "en": "Creative search-bar concept design" }, "category": "social", "label": "TASTE", "color": "#2f3a22", "img": "assets/social-4-taste.png" },
+    { "id": "p5", "title": { "ar": "Smoke Land — قائمة برجر", "en": "Smoke Land — Burger Menu" }, "desc": { "ar": "تصميم قائمة طعام لمطعم برجر", "en": "Menu design for a burger restaurant" }, "category": "branding", "label": "MENU", "color": "#7a2417", "img": "assets/social-5-menu.png" }
+  ],
+  "resume": {
+    "cvUrl": "assets/cv.pdf",
+    "experience": [
+      { "date": { "ar": "2023 — الآن", "en": "2023 — Now" }, "title": { "ar": "مصمم جرافيك مستقل (فريلانسر)", "en": "Freelance Graphic Designer" }, "desc": { "ar": "تصميم الهويات البصرية والمحتوى لعملاء متعددين في قطاعات مختلفة.", "en": "Designing brand identities and content for multiple clients across sectors." } },
+      { "date": { "ar": "2021 — 2023", "en": "2021 — 2023" }, "title": { "ar": "مصمم ومنشئ محتوى", "en": "Designer & Content Creator" }, "desc": { "ar": "تصميم الهويات وإدارة محتوى السوشل ميديا في وكالة تسويق.", "en": "Designed identities and managed social content at a marketing agency." } },
+      { "date": { "ar": "2019 — 2021", "en": "2019 — 2021" }, "title": { "ar": "مصمم جرافيك", "en": "Graphic Designer" }, "desc": { "ar": "تصميم مطبوعات وقوائم طعام ومواد تسويقية لعلامات محلية.", "en": "Designed print, menus, and marketing materials for local brands." } }
+    ],
+    "education": [
+      { "date": { "ar": "2015 — 2019", "en": "2015 — 2019" }, "title": { "ar": "بكالوريوس تصميم جرافيك / إعلام", "en": "BA in Graphic Design / Media" }, "desc": { "ar": "درجة في التصميم والإعلام الرقمي.", "en": "Degree in design and digital media." } }
+    ],
+    "skills": [
+      { "name": { "ar": "تصميم جرافيك", "en": "Graphic Design" }, "pct": 95 },
+      { "name": { "ar": "الهوية البصرية", "en": "Brand Identity" }, "pct": 92 },
+      { "name": { "ar": "إدارة سوشل ميديا", "en": "Social Media" }, "pct": 88 },
+      { "name": { "ar": "مونتاج وموشن", "en": "Editing & Motion" }, "pct": 80 },
+      { "name": { "ar": "كتابة المحتوى", "en": "Copywriting" }, "pct": 82 }
+    ]
+  },
+  "testimonials": [
+    { "text": { "ar": "«الهوية البصرية التي صممها غيّرت شكل علامتنا تماماً. ننصح به بشدة.»", "en": "“The brand identity he designed completely transformed our look. Highly recommended.”" }, "name": { "ar": "أحمد ك.", "en": "Ahmed K." }, "role": { "ar": "مدير شركة ناشئة", "en": "Startup Founder" } },
+    { "text": { "ar": "«تصاميم قائمة الطعام رفعت مستوى مطعمنا وجذبت عملاء جدد.»", "en": "“The menu designs elevated our restaurant and attracted new customers.”" }, "name": { "ar": "سارة م.", "en": "Sara M." }, "role": { "ar": "صاحبة مطعم", "en": "Restaurant Owner" } },
+    { "text": { "ar": "«احترافية عالية والتزام بالمواعيد ونتائج تفوق التوقعات.»", "en": "“Highly professional, on time, and results beyond expectations.”" }, "name": { "ar": "ليلى ع.", "en": "Layla A." }, "role": { "ar": "مديرة تسويق", "en": "Marketing Lead" } }
+  ],
+  "contact": {
+    "lead": { "ar": "لديك فكرة أو مشروع؟ أرسل لي رسالة وسأرد عليك خلال 24 ساعة.", "en": "Got an idea or a project? Send me a message and I'll reply within 24 hours." },
+    "email": "mezoo.bk@gmail.com",
+    "instagram": { "handle": "@mjcoz1", "url": "https://instagram.com/mjcoz1" },
+    "whatsapp": { "display": "+966 55 877 9714", "url": "https://wa.me/966558779714" }
+  }
+}
