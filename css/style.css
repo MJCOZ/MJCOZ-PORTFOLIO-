@@ -6,9 +6,10 @@
 :root {
   --bg:        #f4f1ea;   /* warm paper */
   --ink:       #0d0d0d;   /* near black  */
+  --navy:      #282868;   /* brand navy (from Mutaz logo) */
   --accent:    #e8ff00;   /* electric lime */
   --accent-2:  #ff3b30;   /* alarm red  */
-  --accent-3:  #2563ff;   /* hard blue  */
+  --accent-3:  #282868;   /* brand navy (accent) */
   --white:     #ffffff;
   --border:    4px solid var(--ink);
   --shadow:    8px 8px 0 var(--ink);
@@ -86,8 +87,11 @@ html[dir="rtl"] .marquee__track { animation-direction: reverse; }
   font-size: 1.8rem;
   letter-spacing: -1px;
   line-height: 1;
+  display: flex; align-items: center;
 }
 .logo span { color: var(--accent-2); }
+.logo img { height: 40px; width: auto; display: block; }
+.logo--footer img { height: 36px; }
 
 .nav__links { display: flex; gap: 6px; }
 .nav__links a {
