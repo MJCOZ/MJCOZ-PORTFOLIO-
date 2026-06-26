@@ -36,13 +36,12 @@
         "en": "I combine creativity with marketing insight, focused on delivering modern, high-quality designs that reflect each client's identity and help them reach their target audience. I'm always developing my skills and keeping up with the latest design trends to deliver professional results that exceed expectations."
       }
     ],
-    "tags": ["Photoshop", "Illustrator", "Figma", "Premiere", "After Effects", "Canva", "Meta Ads", "Google Ads", "SEO"]
+    "tags": ["Photoshop", "Illustrator", "Figma", "Canva", "Meta Ads", "Google Ads", "SEO"]
   },
   "services": [
     { "num": "A", "title": { "ar": "تصميم جرافيك وهوية بصرية", "en": "Graphic & Brand Design" }, "desc": { "ar": "شعارات، هويات بصرية كاملة، تصاميم منشورات، ومطبوعات تعكس شخصية علامتك التجارية.", "en": "Logos, full visual identities, post designs, and print that reflect your brand's personality." } },
     { "num": "B", "title": { "ar": "إدارة سوشل ميديا", "en": "Social Media Management" }, "desc": { "ar": "خطط محتوى، جدولة، كتابة، وإدارة كاملة لحساباتك على إنستغرام وتيك توك وغيرها.", "en": "Content plans, scheduling, copywriting, and full management of your Instagram, TikTok and more." } },
-    { "num": "C", "title": { "ar": "قوائم الطعام والمطاعم", "en": "Menus & Restaurants" }, "desc": { "ar": "تصميم قوائم طعام (Menu) ومواد بصرية للمطاعم والكافيهات تبرز منتجاتك بشكل شهيّ.", "en": "Menu design and visual materials for restaurants and cafés that make your products look irresistible." } },
-    { "num": "D", "title": { "ar": "محتوى ومونتاج", "en": "Content & Editing" }, "desc": { "ar": "تصوير، مونتاج فيديو، ريلز، وموشن جرافيك يجذب الجمهور ويرفع نسب التفاعل.", "en": "Photography, video editing, reels, and motion graphics that capture attention and boost engagement." } }
+    { "num": "C", "title": { "ar": "قوائم الطعام والمطاعم", "en": "Menus & Restaurants" }, "desc": { "ar": "تصميم قوائم طعام (Menu) ومواد بصرية للمطاعم والكافيهات تبرز منتجاتك بشكل شهيّ.", "en": "Menu design and visual materials for restaurants and cafés that make your products look irresistible." } }
   ],
   "projects": [
     { "id": "p1", "title": { "ar": "عجينة — ميني بيتزا", "en": "Ajinah — Mini Pizza" }, "desc": { "ar": "تصميم منشور إعلاني لإطلاق الميني بيتزا", "en": "Promo post for the mini pizza launch" }, "category": "social", "label": "AJINAH", "color": "#cfa372", "img": "assets/social-1-minipizza.png" },
@@ -65,7 +64,6 @@
       { "name": { "ar": "تصميم جرافيك", "en": "Graphic Design" }, "pct": 95 },
       { "name": { "ar": "الهوية البصرية", "en": "Brand Identity" }, "pct": 92 },
       { "name": { "ar": "إدارة سوشل ميديا", "en": "Social Media" }, "pct": 88 },
-      { "name": { "ar": "مونتاج وموشن", "en": "Editing & Motion" }, "pct": 80 },
       { "name": { "ar": "كتابة المحتوى", "en": "Copywriting" }, "pct": 82 }
     ]
   },
