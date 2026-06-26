@@ -61,7 +61,14 @@
 
   function renderAbout() {
     const a = content.about || {};
-    $("#aboutAvatar").textContent = t(a.avatar);
+    const av = $("#aboutAvatar");
+    if (a.logo) {
+      av.classList.add("about__avatar--logo");
+      av.innerHTML = `<img src="${esc(a.logo)}" alt="${esc(t(a.name))}">`;
+    } else {
+      av.classList.remove("about__avatar--logo");
+      av.textContent = t(a.avatar);
+    }
     $("#aboutName").textContent = t(a.name);
     $("#aboutRole").textContent = t(a.role);
     $("#aboutMeta").innerHTML = (a.meta || []).map(m =>

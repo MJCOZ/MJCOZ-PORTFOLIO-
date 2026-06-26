@@ -14,9 +14,9 @@
   --border:    4px solid var(--ink);
   --shadow:    8px 8px 0 var(--ink);
   --shadow-sm: 5px 5px 0 var(--ink);
-  --font-ar:   "Tajawal", "Cairo", sans-serif;
+  --font-ar:   "Changa", "Cairo", sans-serif;
   --font-en:   "Space Grotesk", sans-serif;
-  --font-display: "Archivo Black", "Cairo", sans-serif;
+  --font-display: "Archivo Black", "Changa", sans-serif;
   --font-mono: "Space Mono", monospace;
   --maxw: 1200px;
 }
@@ -207,6 +207,11 @@ html[dir="rtl"] .section__title { text-transform: none; letter-spacing: 0; }
   display: grid; place-items: center;
   font-family: var(--font-display); font-size: 2.6rem;
 }
+.about__avatar--logo {
+  width: 100%; height: auto; aspect-ratio: auto;
+  padding: 20px 16px;
+}
+.about__avatar--logo img { width: 100%; height: auto; display: block; }
 .about__card h3 { font-family: var(--font-display); font-size: 1.6rem; }
 .about__role { font-family: var(--font-mono); font-size: .9rem; color: #555; margin-bottom: 18px; }
 .about__meta { list-style: none; text-align: start; font-size: .95rem; }

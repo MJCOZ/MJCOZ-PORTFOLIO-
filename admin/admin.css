@@ -1,7 +1,7 @@
 :root{
   --bg:#f4f1ea; --ink:#0d0d0d; --navy:#282868; --accent:#e8ff00; --red:#ff3b30;
   --border:3px solid var(--ink); --shadow:5px 5px 0 var(--ink);
-  --mono:"Space Mono",monospace; --sans:"Tajawal",sans-serif;
+  --mono:"Space Mono",monospace; --sans:"Changa",sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5}
