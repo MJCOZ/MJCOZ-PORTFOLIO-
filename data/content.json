@@ -2,9 +2,9 @@
   "hero": {
     "eyebrow": { "ar": "// مصمم جرافيك — فريلانسر — هوية بصرية", "en": "// Graphic Designer — Freelancer — Branding" },
     "title": [
-      { "text": { "ar": "أصنع", "en": "I CRAFT" }, "accent": false },
-      { "text": { "ar": "علامات تجارية", "en": "BRANDS THAT" }, "accent": true },
-      { "text": { "ar": "لا تُنسى.", "en": "STICK." }, "accent": false }
+      { "text": { "ar": "اصنع", "en": "MAKE" }, "accent": false },
+      { "text": { "ar": "الفرق", "en": "THE DIFFERENCE" }, "accent": true },
+      { "text": { "ar": "في هويتك", "en": "IN YOUR BRAND" }, "accent": false }
     ],
     "lead": {
       "ar": "أساعد العلامات التجارية على الظهور والنمو من خلال تصميم جريء، هوية بصرية متكاملة، ومحتوى يلفت الانتباه ويحقّق نتائج.",

@@ -154,9 +154,12 @@ html[dir="rtl"] .marquee__track { animation-direction: reverse; }
 html[dir="rtl"] .hero__title { letter-spacing: 0; line-height: 1.05; }
 .hero__title .line { display: block; }
 .hero__title .line--accent {
-  color: var(--bg);
-  -webkit-text-stroke: 2px var(--ink);
-  text-shadow: var(--shadow);
+  color: var(--ink);
+  background: var(--accent);
+  display: inline-block;
+  padding: 0 .18em;
+  box-shadow: var(--shadow);
+  -webkit-text-stroke: 0;
 }
 .hero__lead {
   max-width: 620px; margin: 30px 0 36px;
