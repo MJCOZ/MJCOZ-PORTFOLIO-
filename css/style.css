@@ -210,6 +210,7 @@ html[dir="rtl"] .section__title { text-transform: none; letter-spacing: 0; }
 .about__avatar--logo {
   width: 100%; height: auto; aspect-ratio: auto;
   padding: 20px 16px;
+  border: none;
 }
 .about__avatar--logo img { width: 100%; height: auto; display: block; }
 .about__card h3 { font-family: var(--font-display); font-size: 1.6rem; }
@@ -217,7 +218,7 @@ html[dir="rtl"] .section__title { text-transform: none; letter-spacing: 0; }
 .about__meta { list-style: none; text-align: start; font-size: .95rem; }
 .about__meta li { padding: 8px 0; border-bottom: 2px dashed #ccc; display: flex; justify-content: space-between; gap: 8px; }
 .about__meta li:last-child { border: none; }
-.status-open { color: #0a8a00; }
+.status-open { color: var(--ink); }
 .about__text p { margin-bottom: 18px; font-size: 1.1rem; }
 .about__tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
 .about__tags span {
