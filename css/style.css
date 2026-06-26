@@ -168,7 +168,7 @@ html[dir="rtl"] .hero__title { letter-spacing: 0; line-height: 1.05; }
 
 /* =================== STATS =================== */
 .stats { background: var(--ink); color: var(--white); border-block: var(--border); }
-.stats__grid { display: grid; grid-template-columns: repeat(4,1fr); }
+.stats__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
 .stat { padding: 38px 20px; text-align: center; border-inline-end: 2px dashed rgba(255,255,255,.25); }
 .stat:last-child { border: none; }
 .stat__num, .stat__plus {

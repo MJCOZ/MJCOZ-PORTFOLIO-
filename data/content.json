@@ -12,10 +12,9 @@
     }
   },
   "stats": [
-    { "num": 120, "plus": "+", "label": { "ar": "مشروع مُنجز", "en": "Projects Done" } },
-    { "num": 50, "plus": "+", "label": { "ar": "عميل سعيد", "en": "Happy Clients" } },
-    { "num": 5, "plus": "+", "label": { "ar": "سنوات خبرة", "en": "Years Experience" } },
-    { "num": 3, "plus": "M+", "label": { "ar": "مرّة وصول", "en": "Total Reach" } }
+    { "num": 85, "plus": "+", "label": { "ar": "مشروع مُنجز", "en": "Projects Done" } },
+    { "num": 45, "plus": "+", "label": { "ar": "عميل سعيد", "en": "Happy Clients" } },
+    { "num": 6, "plus": "+", "label": { "ar": "سنوات خبرة", "en": "Years Experience" } }
   ],
   "about": {
     "name": { "ar": "معتز عوض", "en": "Moataz Awad" },
