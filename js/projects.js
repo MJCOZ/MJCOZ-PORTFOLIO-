@@ -1,57 +1,48 @@
 /* =========================================================
    Projects data — edit this list to add/remove your work.
    category: "branding" | "social" | "marketing"
-   color:    background color of the card thumbnail
-   Replace `img` with a real image path (e.g. "assets/project1.jpg")
-   to show a photo instead of the colored placeholder.
+   color:    fallback background color (used only if `img` is empty)
+   img:      image path, e.g. "assets/social-1-minipizza.png"
    ========================================================= */
 const PROJECTS = [
   {
-    title:    { ar: "هوية مقهى ROAST", en: "ROAST Café Brand" },
-    desc:     { ar: "هوية بصرية كاملة وتصاميم منيو", en: "Full visual identity & menu design" },
-    category: "branding",
-    label:    "ROAST",
-    color:    "#e8ff00",
-    img:      ""
-  },
-  {
-    title:    { ar: "حملة إطلاق منتج", en: "Product Launch Campaign" },
-    desc:     { ar: "حملة Meta Ads بنتائج +300% وصول", en: "Meta Ads campaign, +300% reach" },
-    category: "marketing",
-    label:    "LAUNCH",
-    color:    "#ff3b30",
-    img:      ""
-  },
-  {
-    title:    { ar: "إدارة حساب أزياء", en: "Fashion Account" },
-    desc:     { ar: "خطة محتوى وتصاميم شهرية لإنستغرام", en: "Monthly IG content plan & design" },
+    title:    { ar: "عجينة — ميني بيتزا", en: "Ajinah — Mini Pizza" },
+    desc:     { ar: "تصميم منشور إعلاني لإطلاق الميني بيتزا", en: "Promo post for the mini pizza launch" },
     category: "social",
-    label:    "FASHION",
-    color:    "#2563ff",
-    img:      ""
+    label:    "AJINAH",
+    color:    "#cfa372",
+    img:      "assets/social-1-minipizza.png"
   },
   {
-    title:    { ar: "هوية شركة عقارات", en: "Real Estate Brand" },
-    desc:     { ar: "شعار ودليل هوية ومطبوعات", en: "Logo, brand guide & print" },
-    category: "branding",
-    label:    "ESTATE",
-    color:    "#0d0d0d",
-    img:      ""
-  },
-  {
-    title:    { ar: "سلسلة ريلز إبداعية", en: "Creative Reels Series" },
-    desc:     { ar: "مونتاج وموشن لرفع التفاعل", en: "Editing & motion for engagement" },
+    title:    { ar: "عجينة — تايبوغرافي", en: "Ajinah — Typography" },
+    desc:     { ar: "تصميم بصري بتكرار النص لإبراز المنتج", en: "Typographic visual highlighting the product" },
     category: "social",
-    label:    "REELS",
-    color:    "#ff3b30",
-    img:      ""
+    label:    "MINI PIZZA",
+    color:    "#cfa372",
+    img:      "assets/social-2-minipizza-type.png"
   },
   {
-    title:    { ar: "حملة موسمية", en: "Seasonal Campaign" },
-    desc:     { ar: "استراتيجية متكاملة عبر القنوات", en: "Full cross-channel strategy" },
-    category: "marketing",
-    label:    "SEASON",
-    color:    "#e8ff00",
-    img:      ""
+    title:    { ar: "عجينة — تشكيلة الصندوق", en: "Ajinah — One Box" },
+    desc:     { ar: "منشور يعرّف بصندوق التشكيلة المتنوعة", en: "Post introducing the variety box" },
+    category: "social",
+    label:    "ONE BOX",
+    color:    "#cdb293",
+    img:      "assets/social-3-box.png"
+  },
+  {
+    title:    { ar: "عجينة — اختر طعمك", en: "Ajinah — Your Taste" },
+    desc:     { ar: "تصميم بفكرة شريط بحث تفاعلي", en: "Creative search-bar concept design" },
+    category: "social",
+    label:    "TASTE",
+    color:    "#2f3a22",
+    img:      "assets/social-4-taste.png"
+  },
+  {
+    title:    { ar: "Smoke Land — قائمة برجر", en: "Smoke Land — Burger Menu" },
+    desc:     { ar: "تصميم قائمة طعام لمطعم برجر", en: "Menu design for a burger restaurant" },
+    category: "social",
+    label:    "MENU",
+    color:    "#7a2417",
+    img:      "assets/social-5-menu.png"
   }
 ];

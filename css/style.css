@@ -250,7 +250,7 @@ html[dir="rtl"] .section__title { text-transform: none; letter-spacing: 0; }
 }
 .work-card:hover { transform: translate(-4px,-4px); box-shadow: 11px 11px 0 var(--accent-3); }
 .work-card__media {
-  aspect-ratio: 4/3; display: grid; place-items: center;
+  aspect-ratio: 4/5; display: grid; place-items: center;
   font-family: var(--font-display); font-size: 2.4rem; color: var(--ink);
   border-bottom: var(--border); position: relative; overflow: hidden;
 }
