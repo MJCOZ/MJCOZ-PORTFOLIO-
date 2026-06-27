@@ -310,6 +310,33 @@
     let rT; window.addEventListener("resize", () => { clearTimeout(rT); rT = setTimeout(setupMarquee, 200); });
     window.addEventListener("load", setupMarquee);
 
+    // scroll progress bar
+    const progress = $("#scrollProgress");
+    if (progress) {
+      const onScroll = () => {
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.width = h > 0 ? (window.scrollY / h * 100) + "%" : "0";
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    }
+
+    // scrollspy: highlight the current section in the nav (landing only)
+    const spyLinks = document.querySelectorAll('.nav__links a[href^="#"]');
+    if (spyLinks.length && "IntersectionObserver" in window) {
+      const map = {};
+      spyLinks.forEach(a => { const id = a.getAttribute("href").slice(1); if (id) map[id] = a; });
+      const spy = new IntersectionObserver((entries) => {
+        entries.forEach(en => {
+          if (en.isIntersecting) {
+            spyLinks.forEach(a => a.classList.remove("is-current"));
+            if (map[en.target.id]) map[en.target.id].classList.add("is-current");
+          }
+        });
+      }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+      Object.keys(map).forEach(id => { const s = document.getElementById(id); if (s) spy.observe(s); });
+    }
+
     const filterBar = $("#filters");
     if (filterBar) filterBar.addEventListener("click", e => {
       const btn = e.target.closest(".filter"); if (!btn) return;

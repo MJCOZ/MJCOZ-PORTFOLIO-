@@ -102,7 +102,8 @@ html[dir="rtl"] .marquee__track { animation-direction: reverse; }
   border: 2px solid transparent;
   transition: all .12s;
 }
-.nav__links a:hover { background: var(--accent); border-color: var(--ink); }
+.nav__links a:hover,
+.nav__links a.is-current { background: var(--accent); border-color: var(--ink); }
 
 .nav__actions { display: flex; align-items: center; gap: 12px; }
 .lang-toggle {
@@ -137,8 +138,48 @@ html[dir="rtl"] .marquee__track { animation-direction: reverse; }
 .btn:hover    { transform: translate(-3px,-3px); box-shadow: 9px 9px 0 var(--ink); }
 .btn:active   { transform: translate(0,0); box-shadow: 2px 2px 0 var(--ink); }
 
+/* =================== SCROLL PROGRESS =================== */
+.scroll-progress {
+  position: fixed; top: 0; inset-inline-start: 0; height: 5px; width: 0;
+  background: var(--accent); border-bottom: 2px solid var(--ink);
+  z-index: 300; transition: width .1s linear;
+}
+
 /* =================== HERO =================== */
-.hero { padding: 80px 0 70px; }
+.hero { padding: 80px 0 70px; position: relative; overflow: hidden; }
+
+/* floating brutalist stickers */
+.hero__stickers { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.sticker {
+  position: absolute;
+  font-family: var(--font-mono); font-weight: 700; font-size: .8rem;
+  background: var(--white); color: var(--ink);
+  border: 3px solid var(--ink); box-shadow: 4px 4px 0 var(--ink);
+  padding: 7px 13px; white-space: nowrap;
+  transform: rotate(var(--r, 0));
+  animation: floaty 5s ease-in-out infinite;
+}
+/* all on the empty side (left in RTL / right in LTR) so they never overlap the text */
+.sticker--1 { top: 13%; inset-inline-end: 6%;  background: var(--accent);   animation-delay: .0s; }
+.sticker--2 { top: 34%; inset-inline-end: 15%; background: var(--white);    animation-delay: .6s; }
+.sticker--3 { top: 56%; inset-inline-end: 6%;  background: var(--navy); color: #fff; animation-delay: 1.2s; }
+.sticker--4 { top: 76%; inset-inline-end: 16%; background: var(--accent-2); color: #fff; animation-delay: .9s; }
+@keyframes floaty {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0)); }
+  50%      { transform: translateY(-14px) rotate(var(--r, 0)); }
+}
+
+/* hashtag chips (soft pill — borrowed accent) */
+.hero__tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; position: relative; z-index: 2; }
+.tag-chip {
+  font-family: var(--font-mono); font-weight: 700; font-size: .82rem;
+  background: var(--white); color: var(--navy);
+  border: 2px solid var(--ink); border-radius: 999px; padding: 6px 14px;
+  transition: transform .12s, background .12s, color .12s;
+}
+.tag-chip:hover { background: var(--navy); color: #fff; transform: translateY(-3px); }
+
+.hero .container { position: relative; z-index: 2; }
 .hero__eyebrow {
   font-family: var(--font-mono); font-weight: 700;
   background: var(--ink); color: var(--accent);
@@ -280,7 +321,7 @@ html[dir="rtl"] .section__title { text-transform: none; letter-spacing: 0; }
   background: var(--white); border: var(--border); box-shadow: var(--shadow-sm);
   overflow: hidden; transition: transform .15s, box-shadow .15s;
 }
-.work-card:hover { transform: translate(-4px,-4px); box-shadow: 11px 11px 0 var(--accent-3); }
+.work-card:hover { transform: translate(-4px,-4px) rotate(-.6deg); box-shadow: 11px 11px 0 var(--accent-3); }
 .work-card[data-category="story"] .work-card__media { aspect-ratio: 9 / 16; }
 .work-card__media {
   aspect-ratio: 4/5; display: grid; place-items: center;
@@ -368,6 +409,7 @@ html[dir="rtl"] .section__title { text-transform: none; letter-spacing: 0; }
   .resume__cols, .contact__grid { grid-template-columns: 1fr; gap: 32px; }
   .work__grid { grid-template-columns: repeat(2,1fr); }
   .testi__grid { grid-template-columns: 1fr; }
+  .hero__stickers { display: none; }
 }
 
 @media (max-width: 760px) {
