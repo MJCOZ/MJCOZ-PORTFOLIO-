@@ -215,7 +215,7 @@
       { key: "title",    kind: "bi",     label: "العنوان" },
       { key: "desc",     kind: "bitext", label: "الوصف" },
       { key: "category", kind: "select", label: "التصنيف", options: [
-        { v: "branding", t: "هوية بصرية" }, { v: "post", t: "بوست" }, { v: "story", t: "ستوري" } ] },
+        { v: "branding", t: "المنيو" }, { v: "post", t: "بوست" }, { v: "story", t: "ستوري" } ] },
       { key: "label",    kind: "text",   label: "اسم مختصر (يظهر لو بلا صورة)" },
       { key: "color",    kind: "color",  label: "لون الخلفية" },
       { key: "img",      kind: "image",  label: "الصورة" }

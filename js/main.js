@@ -89,7 +89,7 @@
   const CAT_LABEL = {
     post:     { ar: "بوست", en: "Post" },
     story:    { ar: "ستوري", en: "Story" },
-    branding: { ar: "هوية", en: "Brand" }
+    branding: { ar: "منيو", en: "Menu" }
   };
   function cardHTML(p) {
     const media = p.img
