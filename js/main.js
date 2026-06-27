@@ -86,25 +86,63 @@
       </article>`).join("");
   }
 
+  const CAT_LABEL = {
+    post:     { ar: "بوست", en: "Post" },
+    story:    { ar: "ستوري", en: "Story" },
+    branding: { ar: "هوية", en: "Brand" }
+  };
+  function cardHTML(p) {
+    const media = p.img
+      ? `<img src="${esc(p.img)}" alt="${esc(t(p.title))}" loading="lazy" style="width:100%;height:100%;object-fit:cover">`
+      : `<span style="color:${lightText(p.color) ? "#fff" : "#0d0d0d"}">${esc(p.label || "")}</span>`;
+    const tag = t(CAT_LABEL[p.category]) || esc(p.category || "");
+    return `
+      <article class="work-card reveal" data-category="${esc(p.category || "")}">
+        <div class="work-card__media" style="background:${esc(p.color || "#ccc")}">
+          <span class="work-card__tag">${esc(tag)}</span>
+          ${media}
+        </div>
+        <div class="work-card__body">
+          <h3>${esc(t(p.title))}</h3>
+          <p>${esc(t(p.desc))}</p>
+        </div>
+      </article>`;
+  }
+
+  // landing: show up to PREVIEW_LIMIT per group; work page: paginate by PAGE_STEP
+  const PREVIEW_LIMIT = 4;
+  const PAGE_STEP = 9;
+
   function renderProjects() {
-    const grid = $("#workGrid");
-    grid.innerHTML = (content.projects || []).map(p => {
-      const media = p.img
-        ? `<img src="${esc(p.img)}" alt="${esc(t(p.title))}" loading="lazy" style="width:100%;height:100%;object-fit:cover">`
-        : `<span style="color:${lightText(p.color) ? "#fff" : "#0d0d0d"}">${esc(p.label || "")}</span>`;
-      return `
-        <article class="work-card reveal" data-category="${esc(p.category || "")}">
-          <div class="work-card__media" style="background:${esc(p.color || "#ccc")}">
-            <span class="work-card__tag">${esc(p.category || "")}</span>
-            ${media}
-          </div>
-          <div class="work-card__body">
-            <h3>${esc(t(p.title))}</h3>
-            <p>${esc(t(p.desc))}</p>
-          </div>
-        </article>`;
-    }).join("");
-    applyFilter(currentFilter);
+    if ($("#postsGrid")) renderLanding();
+    else if ($("#allGrid")) renderWorkPage();
+  }
+
+  function fillGroup(gridSel, groupSel, items) {
+    const grid = $(gridSel), group = $(groupSel);
+    if (!grid) return;
+    if (group) group.style.display = items.length ? "" : "none";
+    grid.innerHTML = items.slice(0, PREVIEW_LIMIT).map(cardHTML).join("");
+    const more = group && group.querySelector(".work-group__more");
+    if (more) more.style.display = items.length > PREVIEW_LIMIT ? "" : "none";
+  }
+  function renderLanding() {
+    const byCat = (c) => (content.projects || []).filter(p => p.category === c);
+    fillGroup("#postsGrid", "#postsGroup", byCat("post"));
+    fillGroup("#storiesGrid", "#storiesGroup", byCat("story"));
+    fillGroup("#brandingGrid", "#brandingGroup", byCat("branding"));
+  }
+
+  let workFilter = "all";
+  let workVisible = PAGE_STEP;
+  function renderWorkPage() {
+    const grid = $("#allGrid");
+    const items = (content.projects || []).filter(p => workFilter === "all" || p.category === workFilter);
+    grid.innerHTML = items.slice(0, workVisible).map(cardHTML).join("");
+    const btn = $("#showMore"), cnt = $("#showMoreCount");
+    if (btn) btn.style.display = items.length > workVisible ? "" : "none";
+    if (cnt) cnt.textContent = `${Math.min(workVisible, items.length)} / ${items.length}`;
+    observeReveals();
   }
 
   function timelineItem(it) {
@@ -148,8 +186,11 @@
   }
 
   function renderAll() {
-    renderHero(); renderStats(); renderAbout(); renderServices();
-    renderProjects(); renderResume(); renderTestimonials(); renderContact();
+    if ($("#heroEyebrow")) { // landing-only sections
+      renderHero(); renderStats(); renderAbout(); renderServices();
+      renderResume(); renderTestimonials(); renderContact();
+    }
+    renderProjects();
     markReveals(); observeReveals();
   }
 
@@ -194,13 +235,13 @@
     track.appendChild(frag);
   }
 
-  /* ---------- filters ---------- */
-  function applyFilter(cat) {
-    currentFilter = cat;
-    document.querySelectorAll(".work-card").forEach(card => {
-      const show = cat === "all" || card.dataset.category === cat;
-      card.classList.toggle("is-hidden", !show);
-    });
+  /* ---------- work-page filters + show more ---------- */
+  function setWorkFilter(cat) {
+    workFilter = cat;
+    workVisible = PAGE_STEP;
+    const bar = $("#filters");
+    if (bar) bar.querySelectorAll(".filter").forEach(b => b.classList.toggle("is-active", b.dataset.filter === cat));
+    renderWorkPage();
   }
 
   /* ---------- reveal ---------- */
@@ -272,10 +313,11 @@
     const filterBar = $("#filters");
     if (filterBar) filterBar.addEventListener("click", e => {
       const btn = e.target.closest(".filter"); if (!btn) return;
-      filterBar.querySelectorAll(".filter").forEach(b => b.classList.remove("is-active"));
-      btn.classList.add("is-active");
-      applyFilter(btn.dataset.filter);
+      setWorkFilter(btn.dataset.filter);
     });
+
+    const showMore = $("#showMore");
+    if (showMore) showMore.addEventListener("click", () => { workVisible += PAGE_STEP; renderWorkPage(); });
 
     const form = $("#contactForm"), note = $("#formNote");
     if (form) form.addEventListener("submit", async (e) => {
@@ -308,6 +350,12 @@
     wireUI();
     content = await loadContent();
     try { lang = localStorage.getItem("mjcoz-lang") || "ar"; } catch (e) { lang = "ar"; }
+    // work page: preselect filter from URL hash (#post / #story / #branding)
+    if ($("#allGrid")) {
+      const h = (location.hash || "").replace("#", "");
+      if (["post", "story", "branding"].includes(h)) { workFilter = h; }
+    }
     setLang(lang);
+    if ($("#allGrid")) setWorkFilter(workFilter); // sync active chip + render
   })();
 })();

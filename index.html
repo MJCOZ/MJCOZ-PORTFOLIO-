@@ -112,13 +112,32 @@
           <span class="section__index">03</span>
           <h2 class="section__title" data-ar="أعمالي المختارة" data-en="Selected Work">أعمالي المختارة</h2>
         </div>
-        <div class="filters" id="filters">
-          <button class="filter is-active" data-filter="all"       data-ar="الكل"       data-en="All">الكل</button>
-          <button class="filter"           data-filter="branding"  data-ar="هوية بصرية" data-en="Branding">هوية بصرية</button>
-          <button class="filter"           data-filter="post"      data-ar="بوست"       data-en="Posts">بوست</button>
-          <button class="filter"           data-filter="story"     data-ar="ستوري"      data-en="Stories">ستوري</button>
+        <!-- Posts -->
+        <div class="work-group" id="postsGroup">
+          <div class="work-group__head">
+            <h3 class="work-group__title" data-ar="بوست" data-en="Posts">بوست</h3>
+            <a class="work-group__more" href="work.html#post" data-ar="عرض كل البوستات →" data-en="All posts →">عرض كل البوستات →</a>
+          </div>
+          <div class="work__grid work__grid--preview" id="postsGrid"></div>
         </div>
-        <div class="work__grid" id="workGrid"></div>
+
+        <!-- Stories -->
+        <div class="work-group" id="storiesGroup">
+          <div class="work-group__head">
+            <h3 class="work-group__title" data-ar="ستوري" data-en="Stories">ستوري</h3>
+            <a class="work-group__more" href="work.html#story" data-ar="عرض كل الستوريات →" data-en="All stories →">عرض كل الستوريات →</a>
+          </div>
+          <div class="work__grid work__grid--preview" id="storiesGrid"></div>
+        </div>
+
+        <!-- Branding -->
+        <div class="work-group" id="brandingGroup">
+          <div class="work-group__head">
+            <h3 class="work-group__title" data-ar="هوية بصرية" data-en="Branding">هوية بصرية</h3>
+            <a class="work-group__more" href="work.html#branding" data-ar="عرض الكل →" data-en="View all →">عرض الكل →</a>
+          </div>
+          <div class="work__grid work__grid--preview" id="brandingGrid"></div>
+        </div>
       </div>
     </section>
 

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>كل الأعمال | Mutaz — Graphic Designer</title>
+  <meta name="description" content="معرض أعمال معتز عوض الكامل — بوست وستوري وهوية بصرية." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&family=Changa:wght@400;500;700;800&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23282868'/><text x='50' y='74' font-size='70' font-weight='900' fill='white' text-anchor='middle' font-family='monospace'>M</text></svg>" />
+</head>
+<body>
+
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span class="marquee__item" data-ar="● تصميم جرافيك ● هوية بصرية ● شعارات ● قوائم طعام ● سوشل ميديا ● محتوى إبداعي " data-en="● Graphic Design ● Branding ● Logos ● Menus ● Social Media ● Creative Content ">● تصميم جرافيك ● هوية بصرية ● شعارات ● قوائم طعام ● سوشل ميديا ● محتوى إبداعي </span>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="container nav">
+      <a href="index.html" class="logo"><img src="assets/logo-mutaz.png" alt="Mutaz — Graphic Designer" /></a>
+      <nav class="nav__links" id="navLinks">
+        <a href="index.html#about"    data-ar="من أنا"  data-en="About">من أنا</a>
+        <a href="index.html#services" data-ar="خدماتي"  data-en="Services">خدماتي</a>
+        <a href="index.html#work"     data-ar="أعمالي"  data-en="Work">أعمالي</a>
+        <a href="index.html#resume"   data-ar="السيرة"  data-en="Resume">السيرة</a>
+        <a href="index.html#contact"  data-ar="تواصل"   data-en="Contact">تواصل</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">EN</button>
+        <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section work" id="work">
+      <div class="container">
+        <div class="section__head">
+          <a href="index.html#work" class="section__index" data-ar="→ رجوع" data-en="→ Back" style="text-decoration:none">→ رجوع</a>
+          <h2 class="section__title" data-ar="كل الأعمال" data-en="All Work">كل الأعمال</h2>
+        </div>
+
+        <div class="filters" id="filters">
+          <button class="filter is-active" data-filter="all"      data-ar="الكل"       data-en="All">الكل</button>
+          <button class="filter"           data-filter="post"     data-ar="بوست"       data-en="Posts">بوست</button>
+          <button class="filter"           data-filter="story"    data-ar="ستوري"      data-en="Stories">ستوري</button>
+          <button class="filter"           data-filter="branding" data-ar="هوية بصرية" data-en="Branding">هوية بصرية</button>
+        </div>
+
+        <div class="work__grid" id="allGrid"></div>
+
+        <div class="show-more-wrap">
+          <button class="btn btn--primary" id="showMore" data-ar="عرض المزيد ↓" data-en="Show more ↓">عرض المزيد ↓</button>
+          <p class="show-more-count" id="showMoreCount"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <a href="index.html" class="logo logo--footer"><img src="assets/logo-mutaz-white.png" alt="Mutaz — Graphic Designer" /></a>
+      <p data-ar="© 2026 معتز عوض — كل الحقوق محفوظة." data-en="© 2026 Mutaz Awad — All rights reserved.">© 2026 معتز عوض — كل الحقوق محفوظة.</p>
+      <a href="#top" class="footer__top" data-ar="↑ للأعلى" data-en="↑ Top">↑ للأعلى</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
