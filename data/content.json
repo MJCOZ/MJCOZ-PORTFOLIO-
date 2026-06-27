@@ -21,7 +21,6 @@
     "role": { "ar": "مصمم جرافيك وفريلانسر", "en": "Graphic Designer & Freelancer" },
     "avatar": { "ar": "م ع", "en": "MA" },
     "logo": "assets/logo-mutaz.png",
-    "photo": "assets/profile.png",
     "meta": [
       { "label": { "ar": "الموقع:", "en": "Location:" }, "value": { "ar": "عن بُعد / عالمي", "en": "Remote / Worldwide" }, "status": false },
       { "label": { "ar": "التوفّر:", "en": "Status:" }, "value": { "ar": "متاح للعمل", "en": "Available" }, "status": true },
@@ -73,9 +72,6 @@
       { "date": { "ar": "2023 — الآن", "en": "2023 — Now" }, "title": { "ar": "مصمم جرافيك مستقل (فريلانسر)", "en": "Freelance Graphic Designer" }, "desc": { "ar": "تصميم الهويات البصرية والمحتوى لعملاء متعددين في قطاعات مختلفة.", "en": "Designing brand identities and content for multiple clients across sectors." } },
       { "date": { "ar": "2021 — 2023", "en": "2021 — 2023" }, "title": { "ar": "مصمم ومنشئ محتوى", "en": "Designer & Content Creator" }, "desc": { "ar": "تصميم الهويات وإدارة محتوى السوشل ميديا في وكالة تسويق.", "en": "Designed identities and managed social content at a marketing agency." } },
       { "date": { "ar": "2019 — 2021", "en": "2019 — 2021" }, "title": { "ar": "مصمم جرافيك", "en": "Graphic Designer" }, "desc": { "ar": "تصميم مطبوعات وقوائم طعام ومواد تسويقية لعلامات محلية.", "en": "Designed print, menus, and marketing materials for local brands." } }
-    ],
-    "education": [
-      { "date": { "ar": "2015 — 2019", "en": "2015 — 2019" }, "title": { "ar": "بكالوريوس تصميم جرافيك / إعلام", "en": "BA in Graphic Design / Media" }, "desc": { "ar": "درجة في التصميم والإعلام الرقمي.", "en": "Degree in design and digital media." } }
     ],
     "skills": [
       { "name": { "ar": "تصميم جرافيك", "en": "Graphic Design" }, "pct": 95 },

@@ -184,9 +184,8 @@
     const aboutObj = objectEditor([
       { key: "name",   kind: "bi",    label: "الاسم" },
       { key: "role",   kind: "bi",    label: "المسمى المهني" },
-      { key: "photo",  kind: "image", label: "صورتك الشخصية (الأولوية في العرض)" },
-      { key: "logo",   kind: "image", label: "الشعار (يظهر لو لا توجد صورة)" },
-      { key: "avatar", kind: "bi",    label: "أحرف الأفاتار (تظهر لو لا صورة ولا شعار)" }
+      { key: "logo",   kind: "image", label: "الشعار (يظهر بدل الأحرف)" },
+      { key: "avatar", kind: "bi",    label: "أحرف الأفاتار (تظهر لو لا يوجد شعار)" }
     ], data.about || {});
     const meta = listEditor([
       { key: "label",  kind: "bi",    label: "التسمية" },
@@ -231,18 +230,13 @@
       { key: "title", kind: "bi",     label: "المسمى" },
       { key: "desc",  kind: "bitext", label: "الوصف" }
     ], (data.resume || {}).experience, "خبرة");
-    const edu = listEditor([
-      { key: "date",  kind: "bi",     label: "الفترة" },
-      { key: "title", kind: "bi",     label: "الشهادة" },
-      { key: "desc",  kind: "bitext", label: "الوصف" }
-    ], (data.resume || {}).education, "مؤهل");
     const skills = listEditor([
       { key: "name", kind: "bi",  label: "المهارة" },
       { key: "pct",  kind: "num", label: "النسبة %" }
     ], (data.resume || {}).skills, "مهارة");
-    readers.resume = () => ({ cvUrl: cv.read(), experience: exp.read(), education: edu.read(), skills: skills.read() });
+    readers.resume = () => ({ cvUrl: cv.read(), experience: exp.read(), skills: skills.read() });
     root.appendChild(panel("السيرة الذاتية", el("div", { class: "field" }, [el("label", { text: "رابط ملف PDF" }), cv.el]),
-      subhead("الخبرات"), exp.el, subhead("التعليم"), edu.el, subhead("المهارات"), skills.el));
+      subhead("الخبرات"), exp.el, subhead("المهارات"), skills.el));
 
     // TESTIMONIALS
     const testi = listEditor([

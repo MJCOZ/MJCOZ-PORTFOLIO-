@@ -160,7 +160,7 @@
   function renderResume() {
     const r = content.resume || {};
     $("#expList").innerHTML = (r.experience || []).map(timelineItem).join("");
-    $("#eduList").innerHTML = (r.education || []).map(timelineItem).join("");
+    const edu = $("#eduList"); if (edu) edu.innerHTML = (r.education || []).map(timelineItem).join("");
     $("#skillsList").innerHTML = (r.skills || []).map(s => `
       <div class="skill">
         <div class="skill__top"><span>${esc(t(s.name))}</span><span>${esc(s.pct)}%</span></div>
