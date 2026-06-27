@@ -169,6 +169,29 @@
     const tg = $("#langToggle"); if (tg) tg.textContent = lang === "ar" ? "EN" : "AR";
     try { localStorage.setItem("mjcoz-lang", lang); } catch (e) {}
     renderAll();
+    setupMarquee();
+  }
+
+  /* ---------- marquee (fill any width seamlessly) ---------- */
+  function setupMarquee() {
+    const track = document.querySelector(".marquee__track");
+    if (!track) return;
+    track.querySelectorAll(".marquee__item--clone").forEach(n => n.remove());
+    const base = track.querySelector(".marquee__item");
+    if (!base) return;
+    const baseW = base.getBoundingClientRect().width;
+    if (!baseW) return;
+    // each "half" of the track must be at least one viewport wide so the
+    // -50% loop never reveals a gap; we then duplicate the half for seamlessness
+    const perHalf = Math.max(1, Math.ceil(window.innerWidth / baseW) + 1);
+    const frag = document.createDocumentFragment();
+    for (let i = 1; i < perHalf * 2; i++) {
+      const c = base.cloneNode(true);
+      c.classList.add("marquee__item--clone");
+      c.setAttribute("aria-hidden", "true");
+      frag.appendChild(c);
+    }
+    track.appendChild(frag);
   }
 
   /* ---------- filters ---------- */
@@ -242,6 +265,9 @@
         menuBtn.setAttribute("aria-expanded", "false");
       }));
     }
+
+    let rT; window.addEventListener("resize", () => { clearTimeout(rT); rT = setTimeout(setupMarquee, 200); });
+    window.addEventListener("load", setupMarquee);
 
     const filterBar = $("#filters");
     if (filterBar) filterBar.addEventListener("click", e => {
