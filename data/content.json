@@ -21,6 +21,7 @@
     "role": { "ar": "مصمم جرافيك وفريلانسر", "en": "Graphic Designer & Freelancer" },
     "avatar": { "ar": "م ع", "en": "MA" },
     "logo": "assets/logo-mutaz.png",
+    "photo": "assets/profile.png",
     "meta": [
       { "label": { "ar": "الموقع:", "en": "Location:" }, "value": { "ar": "عن بُعد / عالمي", "en": "Remote / Worldwide" }, "status": false },
       { "label": { "ar": "التوفّر:", "en": "Status:" }, "value": { "ar": "متاح للعمل", "en": "Available" }, "status": true },

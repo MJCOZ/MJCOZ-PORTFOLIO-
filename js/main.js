@@ -62,11 +62,15 @@
   function renderAbout() {
     const a = content.about || {};
     const av = $("#aboutAvatar");
-    if (a.logo) {
+    av.classList.remove("about__avatar--logo", "about__avatar--photo");
+    if (a.photo) {
+      const badge = lang === "ar" ? "✦ متاح للعمل" : "✦ Available";
+      av.classList.add("about__avatar--photo");
+      av.innerHTML = `<img src="${esc(a.photo)}" alt="${esc(t(a.name))}"><span class="about__photo-badge">${badge}</span>`;
+    } else if (a.logo) {
       av.classList.add("about__avatar--logo");
       av.innerHTML = `<img src="${esc(a.logo)}" alt="${esc(t(a.name))}">`;
     } else {
-      av.classList.remove("about__avatar--logo");
       av.textContent = t(a.avatar);
     }
     $("#aboutName").textContent = t(a.name);

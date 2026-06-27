@@ -253,6 +253,25 @@ html[dir="rtl"] .section__title { text-transform: none; letter-spacing: 0; }
   background: transparent;
 }
 .about__avatar--logo img { width: 100%; height: auto; display: block; }
+
+/* personal photo — brutalist frame + floating badge (reference style) */
+.about__avatar--photo {
+  width: 100%; height: auto; aspect-ratio: 4 / 5;
+  background: transparent; border: none; padding: 0;
+  position: relative; overflow: visible;
+  transform: rotate(-1.5deg);
+}
+.about__avatar--photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  border: var(--border); box-shadow: var(--shadow);
+}
+.about__photo-badge {
+  position: absolute; bottom: -16px; inset-inline-start: -10px;
+  background: var(--accent); color: var(--ink);
+  font-family: var(--font-mono); font-weight: 700; font-size: .8rem;
+  border: var(--border); border-radius: 999px; padding: 7px 14px;
+  box-shadow: var(--shadow-sm); transform: rotate(4deg); white-space: nowrap;
+}
 .about__card h3 { font-family: var(--font-display); font-size: 1.6rem; }
 .about__role { font-family: var(--font-mono); font-size: .9rem; color: #555; margin-bottom: 18px; }
 .about__meta { list-style: none; text-align: start; font-size: .95rem; }

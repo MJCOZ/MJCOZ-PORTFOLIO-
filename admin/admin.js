@@ -184,8 +184,9 @@
     const aboutObj = objectEditor([
       { key: "name",   kind: "bi",    label: "الاسم" },
       { key: "role",   kind: "bi",    label: "المسمى المهني" },
-      { key: "logo",   kind: "image", label: "شعار البطاقة (يظهر بدل الأحرف)" },
-      { key: "avatar", kind: "bi",    label: "أحرف الأفاتار (تظهر لو لا يوجد شعار)" }
+      { key: "photo",  kind: "image", label: "صورتك الشخصية (الأولوية في العرض)" },
+      { key: "logo",   kind: "image", label: "الشعار (يظهر لو لا توجد صورة)" },
+      { key: "avatar", kind: "bi",    label: "أحرف الأفاتار (تظهر لو لا صورة ولا شعار)" }
     ], data.about || {});
     const meta = listEditor([
       { key: "label",  kind: "bi",    label: "التسمية" },
