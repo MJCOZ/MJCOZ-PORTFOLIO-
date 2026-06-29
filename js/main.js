@@ -93,6 +93,7 @@
   const CAT_LABEL = {
     post:     { ar: "بوست", en: "Post" },
     story:    { ar: "ستوري", en: "Story" },
+    logo:     { ar: "شعار", en: "Logo" },
     branding: { ar: "منيو", en: "Menu" }
   };
   function cardHTML(p) {
@@ -134,6 +135,7 @@
     const byCat = (c) => (content.projects || []).filter(p => p.category === c);
     fillGroup("#postsGrid", "#postsGroup", byCat("post"));
     fillGroup("#storiesGrid", "#storiesGroup", byCat("story"));
+    fillGroup("#logosGrid", "#logosGroup", byCat("logo"));
     fillGroup("#brandingGrid", "#brandingGroup", byCat("branding"));
   }
 
@@ -384,7 +386,7 @@
     // work page: preselect filter from URL hash (#post / #story / #branding)
     if ($("#allGrid")) {
       const h = (location.hash || "").replace("#", "");
-      if (["post", "story", "branding"].includes(h)) { workFilter = h; }
+      if (["post", "story", "logo", "branding"].includes(h)) { workFilter = h; }
     }
     setLang(lang);
     if ($("#allGrid")) setWorkFilter(workFilter); // sync active chip + render

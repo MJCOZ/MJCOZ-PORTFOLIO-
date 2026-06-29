@@ -64,7 +64,8 @@
     { "id": "p18", "title": { "ar": "تيكا — مواعيد العمل", "en": "Tikka — Hours" }, "desc": { "ar": "ستوري مواعيد العمل", "en": "Working hours story" }, "category": "story", "label": "TIKKA", "color": "#7a1f24", "img": "assets/work-tikka-hours.jpg" },
     { "id": "p19", "title": { "ar": "EggTrip — العودة للمدارس", "en": "EggTrip — Back to School" }, "desc": { "ar": "بوست حملة العودة للمدارس", "en": "Back-to-school campaign post" }, "category": "post", "label": "EGGTRIP", "color": "#f3e2a0", "img": "assets/work-eggtrip-school.jpg" },
     { "id": "p20", "title": { "ar": "تيكا — الموقع", "en": "Tikka — Location" }, "desc": { "ar": "ستوري موقع الفرع في جازان", "en": "Branch location story in Jazan" }, "category": "story", "label": "TIKKA", "color": "#7a1f24", "img": "assets/work-tikka-location.jpg" },
-    { "id": "p21", "title": { "ar": "Pure — ورشة الفخار", "en": "Pure — Pottery Workshop" }, "desc": { "ar": "ستوري ورشة «اصنع كوبك بنفسك»", "en": "Make-your-own-mug workshop story" }, "category": "story", "label": "AZURA", "color": "#3a4654", "img": "assets/work-pure-pottery.jpg" }
+    { "id": "p21", "title": { "ar": "Pure — ورشة الفخار", "en": "Pure — Pottery Workshop" }, "desc": { "ar": "ستوري ورشة «اصنع كوبك بنفسك»", "en": "Make-your-own-mug workshop story" }, "category": "story", "label": "AZURA", "color": "#3a4654", "img": "assets/work-pure-pottery.jpg" },
+    { "id": "p22", "title": { "ar": "Royal Choice — شعار", "en": "Royal Choice — Logo" }, "desc": { "ar": "تصميم شعار لعلامة Royal Choice", "en": "Logo design for Royal Choice" }, "category": "logo", "label": "ROYAL", "color": "#307080", "img": "assets/work-royal-logo.jpg" }
   ],
   "resume": {
     "cvUrl": "assets/cv.pdf",

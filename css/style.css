@@ -358,6 +358,7 @@ html[dir="rtl"] .section__title { text-transform: none; letter-spacing: 0; }
 }
 .work-card:hover { transform: translate(-4px,-4px) rotate(-.6deg); box-shadow: 11px 11px 0 var(--accent-3); }
 .work-card[data-category="story"] .work-card__media { aspect-ratio: 9 / 16; }
+.work-card[data-category="logo"] .work-card__media { aspect-ratio: 1 / 1; }
 .work-card__media {
   aspect-ratio: 4/5; display: grid; place-items: center;
   font-family: var(--font-display); font-size: 2.4rem; color: var(--ink);
