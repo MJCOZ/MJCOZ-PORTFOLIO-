@@ -24,8 +24,44 @@ const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "change-me";
 const ADMIN_SECRET   = process.env.ADMIN_SECRET   || crypto.randomBytes(24).toString("hex");
 const TOKEN_TTL_MS   = 1000 * 60 * 60 * 12; // 12h
 
+// Optional: free permanent storage — commit admin changes back to GitHub so
+// they survive redeploys on the free plan. Set GITHUB_TOKEN to enable.
+const GH_TOKEN  = process.env.GITHUB_TOKEN  || "";
+const GH_REPO   = process.env.GITHUB_REPO   || "mjcoz/mjcoz-portfolio-";
+const GH_BRANCH = process.env.GITHUB_BRANCH || "claude/brutalism-portfolio-site-a2pehk";
+
 if (ADMIN_PASSWORD === "change-me") {
   console.warn("⚠️  ADMIN_PASSWORD is not set — using default 'change-me'. Set it in your environment!");
+}
+if (!GH_TOKEN) {
+  console.warn("ℹ️  GITHUB_TOKEN not set — admin changes are temporary (lost on redeploy). Set it for permanent storage.");
+}
+
+/* ---------- GitHub persistence (best-effort) ---------- */
+async function ghCommit(repoPath, buffer, message) {
+  if (!GH_TOKEN || !GH_REPO) return;
+  const api = `https://api.github.com/repos/${GH_REPO}/contents/${encodeURI(repoPath)}`;
+  const headers = {
+    Authorization: `Bearer ${GH_TOKEN}`,
+    Accept: "application/vnd.github+json",
+    "User-Agent": "mutaz-portfolio"
+  };
+  try {
+    let sha;
+    const cur = await fetch(`${api}?ref=${encodeURIComponent(GH_BRANCH)}`, { headers });
+    if (cur.ok) sha = (await cur.json()).sha;
+    const body = { message, content: buffer.toString("base64"), branch: GH_BRANCH };
+    if (sha) body.sha = sha;
+    const put = await fetch(api, {
+      method: "PUT",
+      headers: { ...headers, "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    });
+    if (!put.ok) console.error("GitHub commit failed:", repoPath, put.status, await put.text());
+    else console.log("✓ committed to GitHub:", repoPath);
+  } catch (e) {
+    console.error("GitHub commit error:", repoPath, e.message);
+  }
 }
 
 /* ---------- ensure content + upload dir exist ---------- */
@@ -102,11 +138,13 @@ app.put("/api/content", requireAuth, (req, res) => {
   const body = req.body;
   if (!body || typeof body !== "object" || Array.isArray(body))
     return res.status(400).json({ error: "invalid content" });
+  const json = JSON.stringify(body, null, 2);
   const tmp = CONTENT_FILE + ".tmp";
-  fs.writeFile(tmp, JSON.stringify(body, null, 2), (err) => {
+  fs.writeFile(tmp, json, (err) => {
     if (err) return res.status(500).json({ error: "could not save" });
     fs.rename(tmp, CONTENT_FILE, (err2) => {
       if (err2) return res.status(500).json({ error: "could not save" });
+      ghCommit("data/content.json", Buffer.from(json), "admin: update content"); // permanent (if token set)
       res.json({ ok: true });
     });
   });
@@ -114,7 +152,14 @@ app.put("/api/content", requireAuth, (req, res) => {
 
 app.post("/api/upload", requireAuth, upload.single("image"), (req, res) => {
   if (!req.file) return res.status(400).json({ error: "no file" });
-  res.json({ path: "/uploads/" + req.file.filename });
+  const filePath = path.join(UPLOAD_DIR, req.file.filename);
+  const repoPath = path.relative(ROOT, filePath).split(path.sep).join("/");
+  let publicPath = "/uploads/" + req.file.filename;       // served from UPLOAD_DIR
+  if (!repoPath.startsWith("..")) {                        // inside repo (assets/) → persist to GitHub
+    publicPath = repoPath;                                 // e.g. "assets/<file>"
+    try { ghCommit(repoPath, fs.readFileSync(filePath), "admin: upload " + req.file.filename); } catch (e) {}
+  }
+  res.json({ path: publicPath });
 });
 
 /* ---------- static ---------- */

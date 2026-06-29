@@ -14,6 +14,14 @@ services:
       # Auto-generated signing secret for admin sessions.
       - key: ADMIN_SECRET
         generateValue: true
+      # FREE permanent storage: a GitHub token lets the admin panel commit
+      # your uploads/edits back to the repo so they survive redeploys.
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: GITHUB_REPO
+        value: mjcoz/mjcoz-portfolio-
+      - key: GITHUB_BRANCH
+        value: claude/brutalism-portfolio-site-a2pehk
 
     # ---------------------------------------------------------------
     # PERSISTENCE (recommended): the free plan's disk is ephemeral, so
