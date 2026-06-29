@@ -4,35 +4,25 @@ services:
   - type: web
     name: mutaz-portfolio
     runtime: node
-    plan: free
+    plan: starter            # paid plan required for a persistent disk
     buildCommand: npm install
     startCommand: node server.js
     envVars:
-      # Set your admin panel password in the Render dashboard (sync:false = secret).
+      # Admin panel password (set the value in the Render dashboard).
       - key: ADMIN_PASSWORD
         sync: false
       # Auto-generated signing secret for admin sessions.
       - key: ADMIN_SECRET
         generateValue: true
-      # FREE permanent storage: a GitHub token lets the admin panel commit
-      # your uploads/edits back to the repo so they survive redeploys.
-      - key: GITHUB_TOKEN
-        sync: false
-      - key: GITHUB_REPO
-        value: mjcoz/mjcoz-portfolio-
-      - key: GITHUB_BRANCH
-        value: claude/brutalism-portfolio-site-a2pehk
+      # Persistent storage paths (point at the mounted disk below) so admin
+      # uploads/edits survive every redeploy and restart.
+      - key: CONTENT_FILE
+        value: /var/data/content.json
+      - key: UPLOAD_DIR
+        value: /var/data/uploads
 
-    # ---------------------------------------------------------------
-    # PERSISTENCE (recommended): the free plan's disk is ephemeral, so
-    # edits made in the admin panel are lost on every redeploy/restart.
-    # To keep them, upgrade the plan and uncomment the block below, then
-    # add these env vars:
-    #   CONTENT_FILE = /var/data/content.json
-    #   UPLOAD_DIR   = /var/data/uploads
-    #
-    # disk:
-    #   name: portfolio-data
-    #   mountPath: /var/data
-    #   sizeGB: 1
-    # ---------------------------------------------------------------
+    # Permanent storage for content + uploaded images.
+    disk:
+      name: portfolio-data
+      mountPath: /var/data
+      sizeGB: 1
