@@ -320,7 +320,23 @@ html[dir="rtl"] .section__title { text-transform: none; letter-spacing: 0; }
   border-bottom: 3px solid var(--ink); padding-bottom: 2px;
 }
 .work-group__more:hover { color: var(--accent-2); border-color: var(--accent-2); }
-.work__grid--preview { grid-template-columns: repeat(4, 1fr); }
+/* preview = always one row; 4-up on desktop/tablet, swipeable on phones */
+.work__grid.work__grid--preview {
+  display: flex; flex-wrap: nowrap; gap: 16px;
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; padding-bottom: 8px;
+  scrollbar-width: thin;
+}
+.work__grid.work__grid--preview > .work-card {
+  flex: 0 0 calc((100% - 48px) / 4);   /* 4 cards + 3 gaps (16px) */
+  scroll-snap-align: start;
+}
+.work__grid--preview::-webkit-scrollbar { height: 8px; }
+.work__grid--preview::-webkit-scrollbar-thumb { background: var(--ink); }
+/* phones: bigger swipeable cards instead of 4 tiny ones */
+@media (max-width: 620px) {
+  .work__grid.work__grid--preview > .work-card { flex: 0 0 74%; }
+}
 
 /* show more (work page) */
 .show-more-wrap { text-align: center; margin-top: 44px; }
