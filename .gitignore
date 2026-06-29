@@ -1,2 +1,8 @@
 node_modules/
+dist/
+build/
+.env
 .DS_Store
+Thumbs.db
+*.mp4
+*.mov
