@@ -64,14 +64,26 @@ async function ghCommit(repoPath, buffer, message) {
   }
 }
 
-/* ---------- ensure content + upload dir exist ---------- */
-fs.mkdirSync(UPLOAD_DIR, { recursive: true });
-fs.mkdirSync(path.dirname(CONTENT_FILE), { recursive: true });
-if (!fs.existsSync(CONTENT_FILE)) {
-  // seed from the repo copy on first run (e.g. fresh persistent disk)
-  const seed = fs.existsSync(SEED_CONTENT) ? fs.readFileSync(SEED_CONTENT, "utf8") : "{}";
-  fs.writeFileSync(CONTENT_FILE, seed);
+/* ---------- ensure content + upload dir exist (resilient) ----------
+   Never crash on startup if the storage path isn't writable yet (e.g. a
+   Render disk that is still attaching). The server boots and serves the
+   repo content; full read/write resumes once the disk is ready. */
+let DATA_READY = false;
+function ensureStorage() {
+  try {
+    fs.mkdirSync(UPLOAD_DIR, { recursive: true });
+    fs.mkdirSync(path.dirname(CONTENT_FILE), { recursive: true });
+    if (!fs.existsSync(CONTENT_FILE)) {
+      const seed = fs.existsSync(SEED_CONTENT) ? fs.readFileSync(SEED_CONTENT, "utf8") : "{}";
+      fs.writeFileSync(CONTENT_FILE, seed);
+    }
+    DATA_READY = true;
+  } catch (e) {
+    DATA_READY = false;
+    console.error("⚠️  storage not writable yet (" + e.message + ") — serving repo content read-only until the disk is ready.");
+  }
 }
+ensureStorage();
 
 /* ---------- auth (stateless HMAC token) ---------- */
 function makeToken() {
@@ -99,7 +111,11 @@ app.use(express.json({ limit: "2mb" }));
 
 /* ---------- uploads (multer) ---------- */
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, UPLOAD_DIR),
+  destination: (req, file, cb) => {
+    if (!DATA_READY) ensureStorage();                 // self-heal once disk is ready
+    try { fs.mkdirSync(UPLOAD_DIR, { recursive: true }); } catch (e) {}
+    cb(null, UPLOAD_DIR);
+  },
   filename: (req, file, cb) => {
     const safe = file.originalname.toLowerCase().replace(/[^a-z0-9.]+/g, "-").replace(/^-+|-+$/g, "");
     cb(null, `${Date.now()}-${safe || "image"}`);
@@ -119,8 +135,12 @@ app.get("/api/health", (req, res) => res.json({ ok: true }));
 
 app.get("/api/content", (req, res) => {
   fs.readFile(CONTENT_FILE, "utf8", (err, data) => {
-    if (err) return res.status(500).json({ error: "could not read content" });
-    res.type("application/json").send(data);
+    if (!err) return res.type("application/json").send(data);
+    // fallback: serve the repo seed if the storage file isn't readable yet
+    fs.readFile(SEED_CONTENT, "utf8", (e2, seed) => {
+      if (e2) return res.status(500).json({ error: "could not read content" });
+      res.type("application/json").send(seed);
+    });
   });
 });
 
@@ -138,6 +158,7 @@ app.put("/api/content", requireAuth, (req, res) => {
   const body = req.body;
   if (!body || typeof body !== "object" || Array.isArray(body))
     return res.status(400).json({ error: "invalid content" });
+  if (!DATA_READY) ensureStorage();                   // self-heal once disk is ready
   const json = JSON.stringify(body, null, 2);
   const tmp = CONTENT_FILE + ".tmp";
   fs.writeFile(tmp, json, (err) => {
