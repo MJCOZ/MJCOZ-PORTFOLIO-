@@ -318,14 +318,20 @@
   document.getElementById("loginForm").addEventListener("submit", async (ev) => {
     ev.preventDefault();
     const errEl = document.getElementById("loginErr"); errEl.hidden = true;
+    const btn = ev.target.querySelector("button[type=submit]");
     const password = document.getElementById("password").value;
+    btn.disabled = true; btn.textContent = "جارٍ التحقق…";
     try {
       const r = await fetch("/api/login", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ password }) });
-      if (!r.ok) throw new Error("كلمة المرور غير صحيحة");
+      if (r.status === 401) throw new Error("كلمة المرور غير صحيحة");
+      if (!r.ok) throw new Error("تعذّر الاتصال بالخادم (" + r.status + ")");
       token = (await r.json()).token;
       localStorage.setItem(TOKEN_KEY, token);
       await loadAndShow();
-    } catch (e) { errEl.textContent = e.message; errEl.hidden = false; }
+    } catch (e) {
+      errEl.textContent = e.message.indexOf("fetch") > -1 ? "تعذّر الوصول للخادم — أعد المحاولة بعد لحظات." : e.message;
+      errEl.hidden = false;
+    } finally { btn.disabled = false; btn.textContent = "دخول"; }
   });
 
   document.getElementById("saveBtn").addEventListener("click", save);
