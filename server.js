@@ -132,13 +132,20 @@ const upload = multer({
 
 /* ---------- API ---------- */
 app.get("/api/health", (req, res) => {
-  if (!DATA_READY) ensureStorage();
-  let writable = false;
-  try { fs.accessSync(UPLOAD_DIR, fs.constants.W_OK); writable = true; } catch (e) {}
+  const mount = "/var/data";
+  let writable = false, detail = null;
+  try {
+    fs.mkdirSync(UPLOAD_DIR, { recursive: true });
+    const probe = path.join(UPLOAD_DIR, ".probe");
+    fs.writeFileSync(probe, "1"); fs.unlinkSync(probe);
+    writable = true; DATA_READY = true;
+  } catch (e) { detail = e.code + ": " + e.message; }
   res.json({
     ok: true,
-    persistentDisk: /^\/var\/data/.test(CONTENT_FILE), // true = configured to use the Render disk
-    storageWritable: writable,                          // true = uploads/edits will persist
+    persistentDisk: /^\/var\/data/.test(CONTENT_FILE), // env configured to use the disk
+    varDataExists: fs.existsSync(mount),                // is the mount point present?
+    storageWritable: writable,                          // can we write there (persistent)?
+    detail,                                             // exact error code if not writable
     uploadDir: UPLOAD_DIR
   });
 });
