@@ -131,7 +131,17 @@ const upload = multer({
 });
 
 /* ---------- API ---------- */
-app.get("/api/health", (req, res) => res.json({ ok: true }));
+app.get("/api/health", (req, res) => {
+  if (!DATA_READY) ensureStorage();
+  let writable = false;
+  try { fs.accessSync(UPLOAD_DIR, fs.constants.W_OK); writable = true; } catch (e) {}
+  res.json({
+    ok: true,
+    persistentDisk: /^\/var\/data/.test(CONTENT_FILE), // true = configured to use the Render disk
+    storageWritable: writable,                          // true = uploads/edits will persist
+    uploadDir: UPLOAD_DIR
+  });
+});
 
 app.get("/api/content", (req, res) => {
   fs.readFile(CONTENT_FILE, "utf8", (err, data) => {
