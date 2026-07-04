@@ -329,7 +329,9 @@
       localStorage.setItem(TOKEN_KEY, token);
       await loadAndShow();
     } catch (e) {
-      errEl.textContent = e.message.indexOf("fetch") > -1 ? "تعذّر الوصول للخادم — أعد المحاولة بعد لحظات." : e.message;
+      const msg = String((e && e.message) || e);
+      console.error("[admin login]", e);
+      errEl.textContent = /fetch|network/i.test(msg) ? "تعذّر الوصول للخادم — أعد المحاولة بعد لحظات." : msg;
       errEl.hidden = false;
     } finally { btn.disabled = false; btn.textContent = "دخول"; }
   });

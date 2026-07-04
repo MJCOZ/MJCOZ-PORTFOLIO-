@@ -4,10 +4,12 @@
   --mono:"Space Mono",monospace; --sans:"Changa",sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none !important}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5}
 button,input,textarea,select{font-family:inherit}
 .muted{color:#666;font-size:.9rem;margin:.4rem 0 1rem}
-.err{color:var(--red);font-weight:700;font-family:var(--mono);font-size:.85rem;margin-top:.6rem}
+.err{background:var(--red);color:#fff;font-weight:700;font-family:var(--mono);font-size:.95rem;margin-top:14px;padding:12px 14px;border:var(--border);box-shadow:3px 3px 0 var(--ink);text-align:center}
+.err[hidden]{display:none}
 
 .btn{font-family:var(--mono);font-weight:700;border:var(--border);padding:9px 16px;cursor:pointer;transition:transform .1s, box-shadow .1s;background:#fff}
 .btn--primary{background:var(--accent);box-shadow:3px 3px 0 var(--ink)}
