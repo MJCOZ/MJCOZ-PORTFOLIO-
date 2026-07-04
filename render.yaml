@@ -4,7 +4,7 @@ services:
   - type: web
     name: mutaz-portfolio
     runtime: node
-    plan: starter            # paid plan required for a persistent disk
+    plan: free               # free plan: persistence is handled via GitHub commits
     buildCommand: npm install
     startCommand: node server.js
     envVars:
@@ -14,15 +14,8 @@ services:
       # Auto-generated signing secret for admin sessions.
       - key: ADMIN_SECRET
         generateValue: true
-      # Persistent storage paths (point at the mounted disk below) so admin
-      # uploads/edits survive every redeploy and restart.
-      - key: CONTENT_FILE
-        value: /var/data/content.json
-      - key: UPLOAD_DIR
-        value: /var/data/uploads
-
-    # Permanent storage for content + uploaded images.
-    disk:
-      name: portfolio-data
-      mountPath: /var/data
-      sizeGB: 1
+      # GitHub token (contents: read/write on this repo). With it set, every
+      # admin upload/edit is committed back to GitHub, so changes survive
+      # redeploys and restarts on the free plan.
+      - key: GITHUB_TOKEN
+        sync: false

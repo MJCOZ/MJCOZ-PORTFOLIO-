@@ -146,7 +146,10 @@ app.get("/api/health", (req, res) => {
     varDataExists: fs.existsSync(mount),                // is the mount point present?
     storageWritable: writable,                          // can we write there (persistent)?
     detail,                                             // exact error code if not writable
-    uploadDir: UPLOAD_DIR
+    uploadDir: UPLOAD_DIR,
+    githubPersistence: Boolean(GH_TOKEN),               // free-plan persistence via commits
+    githubRepo: GH_TOKEN ? GH_REPO : undefined,
+    githubBranch: GH_TOKEN ? GH_BRANCH : undefined
   });
 });
 
