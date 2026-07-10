@@ -1,30 +1,111 @@
 {
   "hero": {
-    "eyebrow": { "ar": "// مصمم جرافيك — فريلانسر — هوية بصرية", "en": "// Graphic Designer — Freelancer — Branding" },
-    "title": [
-      { "text": { "ar": "اصنع", "en": "MAKE" }, "accent": false },
-      { "text": { "ar": "الفرق", "en": "THE DIFFERENCE" }, "accent": true },
-      { "text": { "ar": "في هويتك", "en": "IN YOUR BRAND" }, "accent": false }
-    ],
+    "eyebrow": {
+      "ar": "// مصمم جرافيك — فريلانسر — هوية بصرية",
+      "en": "// Graphic Designer — Freelancer — Branding"
+    },
     "lead": {
       "ar": "أساعد العلامات التجارية على الظهور والنمو من خلال تصميم جريء، هوية بصرية متكاملة، ومحتوى يلفت الانتباه ويحقّق نتائج.",
       "en": "I help brands show up and grow through bold design, complete visual identity, and content that grabs attention and delivers results."
-    }
+    },
+    "title": [
+      {
+        "text": {
+          "ar": "اصنع",
+          "en": "MAKE"
+        },
+        "accent": false
+      },
+      {
+        "text": {
+          "ar": "الفرق",
+          "en": "THE DIFFERENCE"
+        },
+        "accent": true
+      },
+      {
+        "text": {
+          "ar": "في هويتك",
+          "en": "IN YOUR BRAND"
+        },
+        "accent": false
+      }
+    ]
   },
   "stats": [
-    { "num": 85, "plus": "+", "label": { "ar": "مشروع مُنجز", "en": "Projects Done" } },
-    { "num": 45, "plus": "+", "label": { "ar": "عميل سعيد", "en": "Happy Clients" } },
-    { "num": 6, "plus": "+", "label": { "ar": "سنوات خبرة", "en": "Years Experience" } }
+    {
+      "num": 85,
+      "plus": "+",
+      "label": {
+        "ar": "مشروع مُنجز",
+        "en": "Projects Done"
+      }
+    },
+    {
+      "num": 45,
+      "plus": "+",
+      "label": {
+        "ar": "عميل سعيد",
+        "en": "Happy Clients"
+      }
+    },
+    {
+      "num": 6,
+      "plus": "+",
+      "label": {
+        "ar": "سنوات خبرة",
+        "en": "Years Experience"
+      }
+    }
   ],
   "about": {
-    "name": { "ar": "معتز عوض", "en": "Moataz Awad" },
-    "role": { "ar": "مصمم جرافيك وفريلانسر", "en": "Graphic Designer & Freelancer" },
-    "avatar": { "ar": "م ع", "en": "MA" },
+    "name": {
+      "ar": "معتز عوض",
+      "en": "Moataz Awad"
+    },
+    "role": {
+      "ar": "مصمم جرافيك وفريلانسر",
+      "en": "Graphic Designer & Freelancer"
+    },
     "logo": "assets/logo-mutaz.webp",
+    "avatar": {
+      "ar": "م ع",
+      "en": "MA"
+    },
     "meta": [
-      { "label": { "ar": "الموقع:", "en": "Location:" }, "value": { "ar": "عن بُعد / عالمي", "en": "Remote / Worldwide" }, "status": false },
-      { "label": { "ar": "التوفّر:", "en": "Status:" }, "value": { "ar": "متاح للعمل", "en": "Available" }, "status": true },
-      { "label": { "ar": "اللغات:", "en": "Languages:" }, "value": { "ar": "عربي / إنجليزي", "en": "Arabic / English" }, "status": false }
+      {
+        "label": {
+          "ar": "الموقع:",
+          "en": "Location:"
+        },
+        "value": {
+          "ar": "عن بُعد / عالمي",
+          "en": "Remote / Worldwide"
+        },
+        "status": false
+      },
+      {
+        "label": {
+          "ar": "التوفّر:",
+          "en": "Status:"
+        },
+        "value": {
+          "ar": "متاح للعمل",
+          "en": "Available"
+        },
+        "status": true
+      },
+      {
+        "label": {
+          "ar": "اللغات:",
+          "en": "Languages:"
+        },
+        "value": {
+          "ar": "عربي / إنجليزي",
+          "en": "Arabic / English"
+        },
+        "status": false
+      }
     ],
     "bio": [
       {
@@ -36,60 +117,562 @@
         "en": "I combine creativity with marketing insight, focused on delivering modern, high-quality designs that reflect each client's identity and help them reach their target audience. I'm always developing my skills and keeping up with the latest design trends to deliver professional results that exceed expectations."
       }
     ],
-    "tags": ["Photoshop", "Illustrator", "Figma", "Canva", "Meta Ads", "Google Ads", "SEO"]
+    "tags": [
+      "Photoshop",
+      "Illustrator",
+      "Figma",
+      "Canva",
+      "Meta Ads",
+      "Google Ads",
+      "SEO"
+    ]
   },
   "services": [
-    { "num": "A", "title": { "ar": "تصميم جرافيك وهوية بصرية", "en": "Graphic & Brand Design" }, "desc": { "ar": "شعارات، هويات بصرية كاملة، تصاميم منشورات، ومطبوعات تعكس شخصية علامتك التجارية.", "en": "Logos, full visual identities, post designs, and print that reflect your brand's personality." } },
-    { "num": "B", "title": { "ar": "إدارة سوشل ميديا", "en": "Social Media Management" }, "desc": { "ar": "خطط محتوى، جدولة، كتابة، وإدارة كاملة لحساباتك على إنستغرام وتيك توك وغيرها.", "en": "Content plans, scheduling, copywriting, and full management of your Instagram, TikTok and more." } },
-    { "num": "C", "title": { "ar": "قوائم الطعام والمطاعم", "en": "Menus & Restaurants" }, "desc": { "ar": "تصميم قوائم طعام (Menu) ومواد بصرية للمطاعم والكافيهات تبرز منتجاتك بشكل شهيّ.", "en": "Menu design and visual materials for restaurants and cafés that make your products look irresistible." } }
+    {
+      "num": "A",
+      "title": {
+        "ar": "تصميم جرافيك وهوية بصرية",
+        "en": "Graphic & Brand Design"
+      },
+      "desc": {
+        "ar": "شعارات، هويات بصرية كاملة، تصاميم منشورات، ومطبوعات تعكس شخصية علامتك التجارية.",
+        "en": "Logos, full visual identities, post designs, and print that reflect your brand's personality."
+      }
+    },
+    {
+      "num": "B",
+      "title": {
+        "ar": "إدارة سوشل ميديا",
+        "en": "Social Media Management"
+      },
+      "desc": {
+        "ar": "خطط محتوى، جدولة، كتابة، وإدارة كاملة لحساباتك على إنستغرام وتيك توك وغيرها.",
+        "en": "Content plans, scheduling, copywriting, and full management of your Instagram, TikTok and more."
+      }
+    },
+    {
+      "num": "C",
+      "title": {
+        "ar": "قوائم الطعام والمطاعم",
+        "en": "Menus & Restaurants"
+      },
+      "desc": {
+        "ar": "تصميم قوائم طعام (Menu) ومواد بصرية للمطاعم والكافيهات تبرز منتجاتك بشكل شهيّ.",
+        "en": "Menu design and visual materials for restaurants and cafés that make your products look irresistible."
+      }
+    }
   ],
   "projects": [
-    { "id": "p1", "title": { "ar": "عجينة — ميني بيتزا", "en": "Ajinah — Mini Pizza" }, "desc": { "ar": "تصميم منشور إعلاني لإطلاق الميني بيتزا", "en": "Promo post for the mini pizza launch" }, "category": "post", "label": "AJINAH", "color": "#cfa372", "img": "assets/social-1-minipizza.webp" },
-    { "id": "p2", "title": { "ar": "عجينة — تايبوغرافي", "en": "Ajinah — Typography" }, "desc": { "ar": "تصميم بصري بتكرار النص لإبراز المنتج", "en": "Typographic visual highlighting the product" }, "category": "post", "label": "MINI PIZZA", "color": "#cfa372", "img": "assets/social-2-minipizza-type.webp" },
-    { "id": "p3", "title": { "ar": "عجينة — تشكيلة الصندوق", "en": "Ajinah — One Box" }, "desc": { "ar": "منشور يعرّف بصندوق التشكيلة المتنوعة", "en": "Post introducing the variety box" }, "category": "post", "label": "ONE BOX", "color": "#cdb293", "img": "assets/social-3-box.webp" },
-    { "id": "p4", "title": { "ar": "عجينة — اختر طعمك", "en": "Ajinah — Your Taste" }, "desc": { "ar": "تصميم بفكرة شريط بحث تفاعلي", "en": "Creative search-bar concept design" }, "category": "post", "label": "TASTE", "color": "#2f3a22", "img": "assets/social-4-taste.webp" },
-    { "id": "p5", "title": { "ar": "Smoke Land — قائمة برجر", "en": "Smoke Land — Burger Menu" }, "desc": { "ar": "تصميم قائمة طعام لمطعم برجر", "en": "Menu design for a burger restaurant" }, "category": "branding", "label": "MENU", "color": "#7a2417", "img": "assets/social-5-menu.webp" },
-    { "id": "p6", "title": { "ar": "Pure — توصيل دولي", "en": "Pure — Intl. Shipping" }, "desc": { "ar": "تصميم ستوري توصيل دولي لدول الخليج", "en": "International shipping story for the Gulf" }, "category": "story", "label": "PURE", "color": "#3f4a3f", "img": "assets/work-pure-shipping.webp" },
-    { "id": "p7", "title": { "ar": "عجينة — عيد الأضحى", "en": "Ajinah — Eid Greeting" }, "desc": { "ar": "تصميم ستوري تهنئة بعيد الأضحى", "en": "Eid Al-Adha greeting story" }, "category": "story", "label": "EID", "color": "#9a9b7a", "img": "assets/work-ajinah-eid.webp" },
-    { "id": "p8", "title": { "ar": "Smoke Land — اليوم الوطني", "en": "Smoke Land — National Day" }, "desc": { "ar": "ستوري خصم بمناسبة اليوم الوطني السعودي", "en": "Saudi National Day discount story" }, "category": "story", "label": "NATIONAL", "color": "#1f2a1f", "img": "assets/work-smokeland-nationalday.webp" },
-    { "id": "p9", "title": { "ar": "Matcha — ماتشا احتفالية", "en": "Matcha — Ceremonial" }, "desc": { "ar": "تصميم ستوري لمنتج ماتشا احتفالية", "en": "Product story for ceremonial matcha" }, "category": "story", "label": "MATCHA", "color": "#3b2e8f", "img": "assets/work-matcha.webp" },
-    { "id": "p10", "title": { "ar": "Smoke Land — عرض الهلال", "en": "Smoke Land — Al Hilal Offer" }, "desc": { "ar": "ستوري خصم احتفالاً بنادي الهلال", "en": "Al Hilal celebration discount story" }, "category": "story", "label": "AL HILAL", "color": "#2b2b2b", "img": "assets/work-smokeland-hilal.webp" },
-    { "id": "p11", "title": { "ar": "Matcha — طاقة للعب", "en": "Matcha — Play Energy" }, "desc": { "ar": "بوست منتج ماتشا بطابع رياضي", "en": "Sporty matcha product post" }, "category": "post", "label": "MATCHA", "color": "#b7d84b", "img": "assets/work-matcha-tennis.webp" },
-    { "id": "p12", "title": { "ar": "Matcha — باندا الملعب", "en": "Matcha — Court Panda" }, "desc": { "ar": "بوست منتج ماتشا بشخصية الباندا", "en": "Matcha product post with panda mascot" }, "category": "post", "label": "MATCHA", "color": "#2f6fb0", "img": "assets/work-matcha-panda.webp" },
-    { "id": "p13", "title": { "ar": "Pure — تصميم الأثاث", "en": "Pure — Furniture" }, "desc": { "ar": "ستوري لخدمة تصميم وتنفيذ الأثاث", "en": "Story for furniture design service" }, "category": "story", "label": "PURE", "color": "#b9a890", "img": "assets/work-pure-furniture.webp" },
-    { "id": "p14", "title": { "ar": "Smoke Land — عيد سعيد", "en": "Smoke Land — Happy Eid" }, "desc": { "ar": "ستوري تهنئة ومواعيد العمل في العيد", "en": "Eid greeting & working hours story" }, "category": "story", "label": "EID", "color": "#2b2b2b", "img": "assets/work-smokeland-eid.webp" },
-    { "id": "p15", "title": { "ar": "تيك — سمبوسة خضار", "en": "Teek — Veg Samosa" }, "desc": { "ar": "بوست منتج سمبوسة الخضار", "en": "Vegetable samosa product post" }, "category": "post", "label": "TEEK", "color": "#f3ddc4", "img": "assets/work-teek-samosa.webp" },
-    { "id": "p16", "title": { "ar": "Pure — تقسيط تابي", "en": "Pure — Tabby" }, "desc": { "ar": "ستوري عن توفّر الدفع بالتقسيط", "en": "Story: Tabby installments available" }, "category": "story", "label": "PURE", "color": "#6f8a72", "img": "assets/work-pure-tabby.webp" },
-    { "id": "p17", "title": { "ar": "Matcha — عيد الأضحى", "en": "Matcha — Eid" }, "desc": { "ar": "ستوري تهنئة بعيد الأضحى", "en": "Eid Al-Adha greeting story" }, "category": "story", "label": "MATCHA", "color": "#2b3a66", "img": "assets/work-matcha-eid.webp" },
-    { "id": "p18", "title": { "ar": "تيكا — مواعيد العمل", "en": "Tikka — Hours" }, "desc": { "ar": "ستوري مواعيد العمل", "en": "Working hours story" }, "category": "story", "label": "TIKKA", "color": "#7a1f24", "img": "assets/work-tikka-hours.webp" },
-    { "id": "p19", "title": { "ar": "EggTrip — العودة للمدارس", "en": "EggTrip — Back to School" }, "desc": { "ar": "بوست حملة العودة للمدارس", "en": "Back-to-school campaign post" }, "category": "post", "label": "EGGTRIP", "color": "#f3e2a0", "img": "assets/work-eggtrip-school.webp" },
-    { "id": "p20", "title": { "ar": "تيكا — الموقع", "en": "Tikka — Location" }, "desc": { "ar": "ستوري موقع الفرع في جازان", "en": "Branch location story in Jazan" }, "category": "story", "label": "TIKKA", "color": "#7a1f24", "img": "assets/work-tikka-location.webp" },
-    { "id": "p21", "title": { "ar": "Pure — ورشة الفخار", "en": "Pure — Pottery Workshop" }, "desc": { "ar": "ستوري ورشة «اصنع كوبك بنفسك»", "en": "Make-your-own-mug workshop story" }, "category": "story", "label": "AZURA", "color": "#3a4654", "img": "assets/work-pure-pottery.webp" },
-    { "id": "p22", "title": { "ar": "Royal Choice — شعار", "en": "Royal Choice — Logo" }, "desc": { "ar": "تصميم شعار لعلامة Royal Choice", "en": "Logo design for Royal Choice" }, "category": "logo", "label": "ROYAL", "color": "#307080", "img": "assets/work-royal-logo.webp" }
+    {
+      "id": "p1",
+      "title": {
+        "ar": "عجينة — ميني بيتزا",
+        "en": "Ajinah — Mini Pizza"
+      },
+      "desc": {
+        "ar": "تصميم منشور إعلاني لإطلاق الميني بيتزا",
+        "en": "Promo post for the mini pizza launch"
+      },
+      "category": "post",
+      "label": "AJINAH",
+      "color": "#cfa372",
+      "img": "assets/social-1-minipizza.webp"
+    },
+    {
+      "id": "p2",
+      "title": {
+        "ar": "عجينة — تايبوغرافي",
+        "en": "Ajinah — Typography"
+      },
+      "desc": {
+        "ar": "تصميم بصري بتكرار النص لإبراز المنتج",
+        "en": "Typographic visual highlighting the product"
+      },
+      "category": "post",
+      "label": "MINI PIZZA",
+      "color": "#cfa372",
+      "img": "assets/social-2-minipizza-type.webp"
+    },
+    {
+      "id": "p3",
+      "title": {
+        "ar": "عجينة — تشكيلة الصندوق",
+        "en": "Ajinah — One Box"
+      },
+      "desc": {
+        "ar": "منشور يعرّف بصندوق التشكيلة المتنوعة",
+        "en": "Post introducing the variety box"
+      },
+      "category": "post",
+      "label": "ONE BOX",
+      "color": "#cdb293",
+      "img": "assets/social-3-box.webp"
+    },
+    {
+      "id": "p4",
+      "title": {
+        "ar": "عجينة — اختر طعمك",
+        "en": "Ajinah — Your Taste"
+      },
+      "desc": {
+        "ar": "تصميم بفكرة شريط بحث تفاعلي",
+        "en": "Creative search-bar concept design"
+      },
+      "category": "post",
+      "label": "TASTE",
+      "color": "#2f3a22",
+      "img": "assets/social-4-taste.webp"
+    },
+    {
+      "id": "p5",
+      "title": {
+        "ar": "Smoke Land — قائمة برجر",
+        "en": "Smoke Land — Burger Menu"
+      },
+      "desc": {
+        "ar": "تصميم قائمة طعام لمطعم برجر",
+        "en": "Menu design for a burger restaurant"
+      },
+      "category": "branding",
+      "label": "MENU",
+      "color": "#7a2417",
+      "img": "assets/social-5-menu.webp"
+    },
+    {
+      "id": "p6",
+      "title": {
+        "ar": "Pure — توصيل دولي",
+        "en": "Pure — Intl. Shipping"
+      },
+      "desc": {
+        "ar": "تصميم ستوري توصيل دولي لدول الخليج",
+        "en": "International shipping story for the Gulf"
+      },
+      "category": "story",
+      "label": "PURE",
+      "color": "#3f4a3f",
+      "img": "assets/work-pure-shipping.webp"
+    },
+    {
+      "id": "p7",
+      "title": {
+        "ar": "عجينة — عيد الأضحى",
+        "en": "Ajinah — Eid Greeting"
+      },
+      "desc": {
+        "ar": "تصميم ستوري تهنئة بعيد الأضحى",
+        "en": "Eid Al-Adha greeting story"
+      },
+      "category": "story",
+      "label": "EID",
+      "color": "#9a9b7a",
+      "img": "assets/work-ajinah-eid.webp"
+    },
+    {
+      "id": "p8",
+      "title": {
+        "ar": "Smoke Land — اليوم الوطني",
+        "en": "Smoke Land — National Day"
+      },
+      "desc": {
+        "ar": "ستوري خصم بمناسبة اليوم الوطني السعودي",
+        "en": "Saudi National Day discount story"
+      },
+      "category": "story",
+      "label": "NATIONAL",
+      "color": "#1f2a1f",
+      "img": "assets/work-smokeland-nationalday.webp"
+    },
+    {
+      "id": "p9",
+      "title": {
+        "ar": "Matcha — ماتشا احتفالية",
+        "en": "Matcha — Ceremonial"
+      },
+      "desc": {
+        "ar": "تصميم ستوري لمنتج ماتشا احتفالية",
+        "en": "Product story for ceremonial matcha"
+      },
+      "category": "story",
+      "label": "MATCHA",
+      "color": "#3b2e8f",
+      "img": "assets/work-matcha.webp"
+    },
+    {
+      "id": "p10",
+      "title": {
+        "ar": "Smoke Land — عرض الهلال",
+        "en": "Smoke Land — Al Hilal Offer"
+      },
+      "desc": {
+        "ar": "ستوري خصم احتفالاً بنادي الهلال",
+        "en": "Al Hilal celebration discount story"
+      },
+      "category": "story",
+      "label": "AL HILAL",
+      "color": "#2b2b2b",
+      "img": "assets/work-smokeland-hilal.webp"
+    },
+    {
+      "id": "p11",
+      "title": {
+        "ar": "Matcha — طاقة للعب",
+        "en": "Matcha — Play Energy"
+      },
+      "desc": {
+        "ar": "بوست منتج ماتشا بطابع رياضي",
+        "en": "Sporty matcha product post"
+      },
+      "category": "post",
+      "label": "MATCHA",
+      "color": "#b7d84b",
+      "img": "assets/work-matcha-tennis.webp"
+    },
+    {
+      "id": "p12",
+      "title": {
+        "ar": "Matcha — باندا الملعب",
+        "en": "Matcha — Court Panda"
+      },
+      "desc": {
+        "ar": "بوست منتج ماتشا بشخصية الباندا",
+        "en": "Matcha product post with panda mascot"
+      },
+      "category": "post",
+      "label": "MATCHA",
+      "color": "#2f6fb0",
+      "img": "assets/work-matcha-panda.webp"
+    },
+    {
+      "id": "p13",
+      "title": {
+        "ar": "Pure — تصميم الأثاث",
+        "en": "Pure — Furniture"
+      },
+      "desc": {
+        "ar": "ستوري لخدمة تصميم وتنفيذ الأثاث",
+        "en": "Story for furniture design service"
+      },
+      "category": "story",
+      "label": "PURE",
+      "color": "#b9a890",
+      "img": "assets/work-pure-furniture.webp"
+    },
+    {
+      "id": "p14",
+      "title": {
+        "ar": "Smoke Land — عيد سعيد",
+        "en": "Smoke Land — Happy Eid"
+      },
+      "desc": {
+        "ar": "ستوري تهنئة ومواعيد العمل في العيد",
+        "en": "Eid greeting & working hours story"
+      },
+      "category": "story",
+      "label": "EID",
+      "color": "#2b2b2b",
+      "img": "assets/work-smokeland-eid.webp"
+    },
+    {
+      "id": "p15",
+      "title": {
+        "ar": "تيك — سمبوسة خضار",
+        "en": "Teek — Veg Samosa"
+      },
+      "desc": {
+        "ar": "بوست منتج سمبوسة الخضار",
+        "en": "Vegetable samosa product post"
+      },
+      "category": "post",
+      "label": "TEEK",
+      "color": "#f3ddc4",
+      "img": "assets/work-teek-samosa.webp"
+    },
+    {
+      "id": "p16",
+      "title": {
+        "ar": "Pure — تقسيط تابي",
+        "en": "Pure — Tabby"
+      },
+      "desc": {
+        "ar": "ستوري عن توفّر الدفع بالتقسيط",
+        "en": "Story: Tabby installments available"
+      },
+      "category": "story",
+      "label": "PURE",
+      "color": "#6f8a72",
+      "img": "assets/work-pure-tabby.webp"
+    },
+    {
+      "id": "p17",
+      "title": {
+        "ar": "Matcha — عيد الأضحى",
+        "en": "Matcha — Eid"
+      },
+      "desc": {
+        "ar": "ستوري تهنئة بعيد الأضحى",
+        "en": "Eid Al-Adha greeting story"
+      },
+      "category": "story",
+      "label": "MATCHA",
+      "color": "#2b3a66",
+      "img": "assets/work-matcha-eid.webp"
+    },
+    {
+      "id": "p18",
+      "title": {
+        "ar": "تيكا — مواعيد العمل",
+        "en": "Tikka — Hours"
+      },
+      "desc": {
+        "ar": "ستوري مواعيد العمل",
+        "en": "Working hours story"
+      },
+      "category": "story",
+      "label": "TIKKA",
+      "color": "#7a1f24",
+      "img": "assets/work-tikka-hours.webp"
+    },
+    {
+      "id": "p19",
+      "title": {
+        "ar": "EggTrip — العودة للمدارس",
+        "en": "EggTrip — Back to School"
+      },
+      "desc": {
+        "ar": "بوست حملة العودة للمدارس",
+        "en": "Back-to-school campaign post"
+      },
+      "category": "post",
+      "label": "EGGTRIP",
+      "color": "#f3e2a0",
+      "img": "assets/work-eggtrip-school.webp"
+    },
+    {
+      "id": "p20",
+      "title": {
+        "ar": "تيكا — الموقع",
+        "en": "Tikka — Location"
+      },
+      "desc": {
+        "ar": "ستوري موقع الفرع في جازان",
+        "en": "Branch location story in Jazan"
+      },
+      "category": "story",
+      "label": "TIKKA",
+      "color": "#7a1f24",
+      "img": "assets/work-tikka-location.webp"
+    },
+    {
+      "id": "p21",
+      "title": {
+        "ar": "Pure — ورشة الفخار",
+        "en": "Pure — Pottery Workshop"
+      },
+      "desc": {
+        "ar": "ستوري ورشة «اصنع كوبك بنفسك»",
+        "en": "Make-your-own-mug workshop story"
+      },
+      "category": "story",
+      "label": "AZURA",
+      "color": "#3a4654",
+      "img": "assets/work-pure-pottery.webp"
+    },
+    {
+      "id": "p22",
+      "title": {
+        "ar": "Royal Choice — شعار",
+        "en": "Royal Choice — Logo"
+      },
+      "desc": {
+        "ar": "تصميم شعار لعلامة Royal Choice",
+        "en": "Logo design for Royal Choice"
+      },
+      "category": "logo",
+      "label": "ROYAL",
+      "color": "#307080",
+      "img": "assets/work-royal-logo.webp"
+    },
+    {
+      "id": "p178369971723622",
+      "title": {
+        "ar": "",
+        "en": ""
+      },
+      "desc": {
+        "ar": "",
+        "en": ""
+      },
+      "category": "post",
+      "label": "",
+      "color": "#cccccc",
+      "img": "assets/1783699700497-.png"
+    },
+    {
+      "id": "p178369971723623",
+      "title": {
+        "ar": "",
+        "en": ""
+      },
+      "desc": {
+        "ar": "",
+        "en": ""
+      },
+      "category": "story",
+      "label": "",
+      "color": "#cccccc",
+      "img": "assets/1783699709169-wrinkled-silk-fabrics-phone-wallpaper-inspirational-quote.png"
+    },
+    {
+      "id": "p178369971723624",
+      "title": {
+        "ar": "",
+        "en": ""
+      },
+      "desc": {
+        "ar": "",
+        "en": ""
+      },
+      "category": "story",
+      "label": "",
+      "color": "#cccccc",
+      "img": ""
+    }
   ],
   "resume": {
     "cvUrl": "assets/cv.pdf",
     "experience": [
-      { "date": { "ar": "2023 — الآن", "en": "2023 — Now" }, "title": { "ar": "مصمم جرافيك مستقل (فريلانسر)", "en": "Freelance Graphic Designer" }, "desc": { "ar": "تصميم الهويات البصرية والمحتوى لعملاء متعددين في قطاعات مختلفة.", "en": "Designing brand identities and content for multiple clients across sectors." } },
-      { "date": { "ar": "2021 — 2023", "en": "2021 — 2023" }, "title": { "ar": "مصمم ومنشئ محتوى", "en": "Designer & Content Creator" }, "desc": { "ar": "تصميم الهويات وإدارة محتوى السوشل ميديا في وكالة تسويق.", "en": "Designed identities and managed social content at a marketing agency." } },
-      { "date": { "ar": "2019 — 2021", "en": "2019 — 2021" }, "title": { "ar": "مصمم جرافيك", "en": "Graphic Designer" }, "desc": { "ar": "تصميم مطبوعات وقوائم طعام ومواد تسويقية لعلامات محلية.", "en": "Designed print, menus, and marketing materials for local brands." } }
+      {
+        "date": {
+          "ar": "2023 — الآن",
+          "en": "2023 — Now"
+        },
+        "title": {
+          "ar": "مصمم جرافيك مستقل (فريلانسر)",
+          "en": "Freelance Graphic Designer"
+        },
+        "desc": {
+          "ar": "تصميم الهويات البصرية والمحتوى لعملاء متعددين في قطاعات مختلفة.",
+          "en": "Designing brand identities and content for multiple clients across sectors."
+        }
+      },
+      {
+        "date": {
+          "ar": "2021 — 2023",
+          "en": "2021 — 2023"
+        },
+        "title": {
+          "ar": "مصمم ومنشئ محتوى",
+          "en": "Designer & Content Creator"
+        },
+        "desc": {
+          "ar": "تصميم الهويات وإدارة محتوى السوشل ميديا في وكالة تسويق.",
+          "en": "Designed identities and managed social content at a marketing agency."
+        }
+      },
+      {
+        "date": {
+          "ar": "2019 — 2021",
+          "en": "2019 — 2021"
+        },
+        "title": {
+          "ar": "مصمم جرافيك",
+          "en": "Graphic Designer"
+        },
+        "desc": {
+          "ar": "تصميم مطبوعات وقوائم طعام ومواد تسويقية لعلامات محلية.",
+          "en": "Designed print, menus, and marketing materials for local brands."
+        }
+      }
     ],
     "skills": [
-      { "name": { "ar": "تصميم جرافيك", "en": "Graphic Design" }, "pct": 95 },
-      { "name": { "ar": "الهوية البصرية", "en": "Brand Identity" }, "pct": 92 },
-      { "name": { "ar": "إدارة سوشل ميديا", "en": "Social Media" }, "pct": 88 },
-      { "name": { "ar": "كتابة المحتوى", "en": "Copywriting" }, "pct": 82 }
+      {
+        "name": {
+          "ar": "تصميم جرافيك",
+          "en": "Graphic Design"
+        },
+        "pct": 95
+      },
+      {
+        "name": {
+          "ar": "الهوية البصرية",
+          "en": "Brand Identity"
+        },
+        "pct": 92
+      },
+      {
+        "name": {
+          "ar": "إدارة سوشل ميديا",
+          "en": "Social Media"
+        },
+        "pct": 88
+      },
+      {
+        "name": {
+          "ar": "كتابة المحتوى",
+          "en": "Copywriting"
+        },
+        "pct": 82
+      }
     ]
   },
   "testimonials": [
-    { "text": { "ar": "«الهوية البصرية التي صممها غيّرت شكل علامتنا تماماً. ننصح به بشدة.»", "en": "“The brand identity he designed completely transformed our look. Highly recommended.”" }, "name": { "ar": "أحمد ك.", "en": "Ahmed K." }, "role": { "ar": "مدير شركة ناشئة", "en": "Startup Founder" } },
-    { "text": { "ar": "«تصاميم قائمة الطعام رفعت مستوى مطعمنا وجذبت عملاء جدد.»", "en": "“The menu designs elevated our restaurant and attracted new customers.”" }, "name": { "ar": "سارة م.", "en": "Sara M." }, "role": { "ar": "صاحبة مطعم", "en": "Restaurant Owner" } },
-    { "text": { "ar": "«احترافية عالية والتزام بالمواعيد ونتائج تفوق التوقعات.»", "en": "“Highly professional, on time, and results beyond expectations.”" }, "name": { "ar": "ليلى ع.", "en": "Layla A." }, "role": { "ar": "مديرة تسويق", "en": "Marketing Lead" } }
+    {
+      "text": {
+        "ar": "«الهوية البصرية التي صممها غيّرت شكل علامتنا تماماً. ننصح به بشدة.»",
+        "en": "“The brand identity he designed completely transformed our look. Highly recommended.”"
+      },
+      "name": {
+        "ar": "أحمد ك.",
+        "en": "Ahmed K."
+      },
+      "role": {
+        "ar": "مدير شركة ناشئة",
+        "en": "Startup Founder"
+      }
+    },
+    {
+      "text": {
+        "ar": "«تصاميم قائمة الطعام رفعت مستوى مطعمنا وجذبت عملاء جدد.»",
+        "en": "“The menu designs elevated our restaurant and attracted new customers.”"
+      },
+      "name": {
+        "ar": "سارة م.",
+        "en": "Sara M."
+      },
+      "role": {
+        "ar": "صاحبة مطعم",
+        "en": "Restaurant Owner"
+      }
+    },
+    {
+      "text": {
+        "ar": "«احترافية عالية والتزام بالمواعيد ونتائج تفوق التوقعات.»",
+        "en": "“Highly professional, on time, and results beyond expectations.”"
+      },
+      "name": {
+        "ar": "ليلى ع.",
+        "en": "Layla A."
+      },
+      "role": {
+        "ar": "مديرة تسويق",
+        "en": "Marketing Lead"
+      }
+    }
   ],
   "contact": {
-    "lead": { "ar": "لديك فكرة أو مشروع؟ أرسل لي رسالة وسأرد عليك خلال 24 ساعة.", "en": "Got an idea or a project? Send me a message and I'll reply within 24 hours." },
-    "email": "mezoo.bk@gmail.com",
-    "instagram": { "handle": "@mjcoz1", "url": "https://instagram.com/mjcoz1" },
-    "whatsapp": { "display": "+966 55 877 9714", "url": "https://wa.me/966558779714" }
+    "lead": {
+      "ar": "لديك فكرة أو مشروع؟ أرسل لي رسالة وسأرد عليك خلال 24 ساعة.",
+      "en": "Got an idea or a project? Send me a message and I'll reply within 24 hours."
+    },
+    "email": "mutaz.des@gmail.com",
+    "instagram": {
+      "handle": "@mjcoz1",
+      "url": "https://instagram.com/mjcoz1"
+    },
+    "whatsapp": {
+      "display": "+966 55 877 9714",
+      "url": "https://wa.me/966558779714"
+    }
   }
 }
