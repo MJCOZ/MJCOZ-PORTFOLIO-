@@ -368,7 +368,7 @@
       const waUrl = (content.contact && content.contact.whatsapp && content.contact.whatsapp.url) || "https://wa.me/966558779714";
       const num = waUrl.replace(/[^0-9]/g, "");
       const text = encodeURIComponent(
-        (isAr ? `مرحباً، أنا ${name}\nرقمي: ${phone}\n\n${msg}` : `Hi, I'm ${name}\nMy number: ${phone}\n\n${msg}`)
+        (isAr ? `اهلين يا مبدع 👋\nالاسم: ${name}\nالجوال: ${phone}\n\n${msg}` : `Hey creative 👋\nName: ${name}\nPhone: ${phone}\n\n${msg}`)
       );
       window.open(`https://wa.me/${num}?text=${text}`, "_blank");
       form.reset();
