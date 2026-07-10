@@ -132,7 +132,8 @@
     if (more) more.style.display = items.length > PREVIEW_LIMIT ? "" : "none";
   }
   function renderLanding() {
-    const byCat = (c) => (content.projects || []).filter(p => p.category === c);
+    // newest-added first (projects are appended, so reverse to show latest)
+    const byCat = (c) => (content.projects || []).filter(p => p.category === c).reverse();
     fillGroup("#postsGrid", "#postsGroup", byCat("post"));
     fillGroup("#storiesGrid", "#storiesGroup", byCat("story"));
     fillGroup("#logosGrid", "#logosGroup", byCat("logo"));
@@ -143,7 +144,7 @@
   let workVisible = PAGE_STEP;
   function renderWorkPage() {
     const grid = $("#allGrid");
-    const items = (content.projects || []).filter(p => workFilter === "all" || p.category === workFilter);
+    const items = (content.projects || []).filter(p => workFilter === "all" || p.category === workFilter).reverse();
     grid.innerHTML = items.slice(0, workVisible).map(cardHTML).join("");
     const btn = $("#showMore"), cnt = $("#showMoreCount");
     if (btn) btn.style.display = items.length > workVisible ? "" : "none";
