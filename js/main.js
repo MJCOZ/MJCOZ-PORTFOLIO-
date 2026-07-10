@@ -98,19 +98,22 @@
   };
   function cardHTML(p) {
     const media = p.img
-      ? `<img src="${esc(p.img)}" alt="${esc(t(p.title))}" loading="lazy" style="width:100%;height:100%;object-fit:cover">`
+      ? `<img src="${esc(p.img)}" alt="${esc(t(p.title) || p.label || "")}" loading="lazy" style="width:100%;height:100%;object-fit:cover">`
       : `<span style="color:${lightText(p.color) ? "#fff" : "#0d0d0d"}">${esc(p.label || "")}</span>`;
     const tag = t(CAT_LABEL[p.category]) || esc(p.category || "");
+    // graceful fallbacks so incomplete items (no title/desc) still look clean
+    const title = (t(p.title) || p.label || "").trim();
+    const desc = (t(p.desc) || "").trim();
+    const body = (title || desc)
+      ? `<div class="work-card__body">${title ? `<h3>${esc(title)}</h3>` : ""}${desc ? `<p>${esc(desc)}</p>` : ""}</div>`
+      : "";
     return `
       <article class="work-card reveal" data-category="${esc(p.category || "")}">
         <div class="work-card__media" style="background:${esc(p.color || "#ccc")}">
           <span class="work-card__tag">${esc(tag)}</span>
           ${media}
         </div>
-        <div class="work-card__body">
-          <h3>${esc(t(p.title))}</h3>
-          <p>${esc(t(p.desc))}</p>
-        </div>
+        ${body}
       </article>`;
   }
 
