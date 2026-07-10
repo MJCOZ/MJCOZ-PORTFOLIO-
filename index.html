@@ -208,20 +208,20 @@
             <ul class="contact__list" id="contactList"></ul>
           </div>
 
-          <form class="contact__form" id="contactForm" action="https://formspree.io/f/your-id" method="POST">
+          <form class="contact__form" id="contactForm">
             <label>
               <span data-ar="الاسم" data-en="Name">الاسم</span>
               <input type="text" name="name" required placeholder="..." />
             </label>
             <label>
-              <span data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</span>
-              <input type="email" name="email" required placeholder="you@email.com" />
+              <span data-ar="رقم الجوال" data-en="Phone">رقم الجوال</span>
+              <input type="tel" name="phone" required dir="ltr" placeholder="05xxxxxxxx" />
             </label>
             <label>
               <span data-ar="رسالتك" data-en="Message">رسالتك</span>
               <textarea name="message" rows="4" required placeholder="..."></textarea>
             </label>
-            <button type="submit" class="btn btn--primary" data-ar="إرسال الرسالة →" data-en="Send Message →">إرسال الرسالة →</button>
+            <button type="submit" class="btn btn--primary" data-ar="إرسال عبر واتساب ↗" data-en="Send via WhatsApp ↗">إرسال عبر واتساب ↗</button>
             <p class="form-note" id="formNote" hidden></p>
           </form>
         </div>

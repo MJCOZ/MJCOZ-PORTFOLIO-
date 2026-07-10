@@ -354,28 +354,22 @@
     if (showMore) showMore.addEventListener("click", () => { workVisible += PAGE_STEP; renderWorkPage(); });
 
     const form = $("#contactForm"), note = $("#formNote");
-    if (form) form.addEventListener("submit", async (e) => {
-      const action = form.getAttribute("action") || "";
+    if (form) form.addEventListener("submit", (e) => {
+      e.preventDefault();
       const isAr = lang === "ar";
       const fd = new FormData(form);
-      const email = (content.contact && content.contact.email) || "mezoo.bk@gmail.com";
-      if (action.includes("your-id")) {
-        e.preventDefault();
-        const subject = encodeURIComponent("Portfolio contact — " + (fd.get("name") || ""));
-        const body = encodeURIComponent((fd.get("message") || "") + "\n\n" + (fd.get("email") || ""));
-        window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-        return;
-      }
-      e.preventDefault();
-      try {
-        const res = await fetch(action, { method: "POST", body: fd, headers: { Accept: "application/json" } });
-        if (!res.ok) throw new Error();
-        form.reset();
-        showNote(isAr ? "تم الإرسال! سأرد عليك قريباً." : "Sent! I'll get back to you soon.", "ok");
-      } catch (_) {
-        showNote(isAr ? "تعذّر الإرسال، حاول عبر البريد مباشرة." : "Couldn't send — try email directly.", "err");
-      }
-      function showNote(msg, kind){ if(!note) return; note.textContent=msg; note.className="form-note "+kind; note.hidden=false; }
+      const name = (fd.get("name") || "").toString().trim();
+      const phone = (fd.get("phone") || "").toString().trim();
+      const msg = (fd.get("message") || "").toString().trim();
+      // build a ready-to-send WhatsApp message to Mutaz's number
+      const waUrl = (content.contact && content.contact.whatsapp && content.contact.whatsapp.url) || "https://wa.me/966558779714";
+      const num = waUrl.replace(/[^0-9]/g, "");
+      const text = encodeURIComponent(
+        (isAr ? `مرحباً، أنا ${name}\nرقمي: ${phone}\n\n${msg}` : `Hi, I'm ${name}\nMy number: ${phone}\n\n${msg}`)
+      );
+      window.open(`https://wa.me/${num}?text=${text}`, "_blank");
+      form.reset();
+      if (note) { note.textContent = isAr ? "يتم فتح واتساب لإرسال رسالتك ✓" : "Opening WhatsApp to send your message ✓"; note.className = "form-note ok"; note.hidden = false; }
     });
   }
 
