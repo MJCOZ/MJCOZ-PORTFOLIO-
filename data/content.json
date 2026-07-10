@@ -166,12 +166,12 @@
     {
       "id": "p1",
       "title": {
-        "ar": "عجينة — ميني بيتزا",
-        "en": "Ajinah — Mini Pizza"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "تصميم منشور إعلاني لإطلاق الميني بيتزا",
-        "en": "Promo post for the mini pizza launch"
+        "ar": "",
+        "en": ""
       },
       "category": "post",
       "label": "AJINAH",
@@ -181,12 +181,12 @@
     {
       "id": "p2",
       "title": {
-        "ar": "عجينة — تايبوغرافي",
-        "en": "Ajinah — Typography"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "تصميم بصري بتكرار النص لإبراز المنتج",
-        "en": "Typographic visual highlighting the product"
+        "ar": "",
+        "en": ""
       },
       "category": "post",
       "label": "MINI PIZZA",
@@ -196,12 +196,12 @@
     {
       "id": "p3",
       "title": {
-        "ar": "عجينة — تشكيلة الصندوق",
-        "en": "Ajinah — One Box"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "منشور يعرّف بصندوق التشكيلة المتنوعة",
-        "en": "Post introducing the variety box"
+        "ar": "",
+        "en": ""
       },
       "category": "post",
       "label": "ONE BOX",
@@ -211,12 +211,12 @@
     {
       "id": "p4",
       "title": {
-        "ar": "عجينة — اختر طعمك",
-        "en": "Ajinah — Your Taste"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "تصميم بفكرة شريط بحث تفاعلي",
-        "en": "Creative search-bar concept design"
+        "ar": "",
+        "en": ""
       },
       "category": "post",
       "label": "TASTE",
@@ -226,12 +226,12 @@
     {
       "id": "p5",
       "title": {
-        "ar": "Smoke Land — قائمة برجر",
-        "en": "Smoke Land — Burger Menu"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "تصميم قائمة طعام لمطعم برجر",
-        "en": "Menu design for a burger restaurant"
+        "ar": "",
+        "en": ""
       },
       "category": "branding",
       "label": "MENU",
@@ -241,12 +241,12 @@
     {
       "id": "p6",
       "title": {
-        "ar": "Pure — توصيل دولي",
-        "en": "Pure — Intl. Shipping"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "تصميم ستوري توصيل دولي لدول الخليج",
-        "en": "International shipping story for the Gulf"
+        "ar": "",
+        "en": ""
       },
       "category": "story",
       "label": "PURE",
@@ -256,12 +256,12 @@
     {
       "id": "p7",
       "title": {
-        "ar": "عجينة — عيد الأضحى",
-        "en": "Ajinah — Eid Greeting"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "تصميم ستوري تهنئة بعيد الأضحى",
-        "en": "Eid Al-Adha greeting story"
+        "ar": "",
+        "en": ""
       },
       "category": "story",
       "label": "EID",
@@ -271,12 +271,12 @@
     {
       "id": "p8",
       "title": {
-        "ar": "Smoke Land — اليوم الوطني",
-        "en": "Smoke Land — National Day"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "ستوري خصم بمناسبة اليوم الوطني السعودي",
-        "en": "Saudi National Day discount story"
+        "ar": "",
+        "en": ""
       },
       "category": "story",
       "label": "NATIONAL",
@@ -286,12 +286,12 @@
     {
       "id": "p9",
       "title": {
-        "ar": "Matcha — ماتشا احتفالية",
-        "en": "Matcha — Ceremonial"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "تصميم ستوري لمنتج ماتشا احتفالية",
-        "en": "Product story for ceremonial matcha"
+        "ar": "",
+        "en": ""
       },
       "category": "story",
       "label": "MATCHA",
@@ -301,12 +301,12 @@
     {
       "id": "p10",
       "title": {
-        "ar": "Smoke Land — عرض الهلال",
-        "en": "Smoke Land — Al Hilal Offer"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "ستوري خصم احتفالاً بنادي الهلال",
-        "en": "Al Hilal celebration discount story"
+        "ar": "",
+        "en": ""
       },
       "category": "story",
       "label": "AL HILAL",
@@ -316,12 +316,12 @@
     {
       "id": "p11",
       "title": {
-        "ar": "Matcha — طاقة للعب",
-        "en": "Matcha — Play Energy"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "بوست منتج ماتشا بطابع رياضي",
-        "en": "Sporty matcha product post"
+        "ar": "",
+        "en": ""
       },
       "category": "post",
       "label": "MATCHA",
@@ -331,12 +331,12 @@
     {
       "id": "p12",
       "title": {
-        "ar": "Matcha — باندا الملعب",
-        "en": "Matcha — Court Panda"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "بوست منتج ماتشا بشخصية الباندا",
-        "en": "Matcha product post with panda mascot"
+        "ar": "",
+        "en": ""
       },
       "category": "post",
       "label": "MATCHA",
@@ -346,12 +346,12 @@
     {
       "id": "p13",
       "title": {
-        "ar": "Pure — تصميم الأثاث",
-        "en": "Pure — Furniture"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "ستوري لخدمة تصميم وتنفيذ الأثاث",
-        "en": "Story for furniture design service"
+        "ar": "",
+        "en": ""
       },
       "category": "story",
       "label": "PURE",
@@ -361,12 +361,12 @@
     {
       "id": "p14",
       "title": {
-        "ar": "Smoke Land — عيد سعيد",
-        "en": "Smoke Land — Happy Eid"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "ستوري تهنئة ومواعيد العمل في العيد",
-        "en": "Eid greeting & working hours story"
+        "ar": "",
+        "en": ""
       },
       "category": "story",
       "label": "EID",
@@ -376,12 +376,12 @@
     {
       "id": "p15",
       "title": {
-        "ar": "تيك — سمبوسة خضار",
-        "en": "Teek — Veg Samosa"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "بوست منتج سمبوسة الخضار",
-        "en": "Vegetable samosa product post"
+        "ar": "",
+        "en": ""
       },
       "category": "post",
       "label": "TEEK",
@@ -391,12 +391,12 @@
     {
       "id": "p16",
       "title": {
-        "ar": "Pure — تقسيط تابي",
-        "en": "Pure — Tabby"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "ستوري عن توفّر الدفع بالتقسيط",
-        "en": "Story: Tabby installments available"
+        "ar": "",
+        "en": ""
       },
       "category": "story",
       "label": "PURE",
@@ -406,12 +406,12 @@
     {
       "id": "p17",
       "title": {
-        "ar": "Matcha — عيد الأضحى",
-        "en": "Matcha — Eid"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "ستوري تهنئة بعيد الأضحى",
-        "en": "Eid Al-Adha greeting story"
+        "ar": "",
+        "en": ""
       },
       "category": "story",
       "label": "MATCHA",
@@ -421,12 +421,12 @@
     {
       "id": "p18",
       "title": {
-        "ar": "تيكا — مواعيد العمل",
-        "en": "Tikka — Hours"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "ستوري مواعيد العمل",
-        "en": "Working hours story"
+        "ar": "",
+        "en": ""
       },
       "category": "story",
       "label": "TIKKA",
@@ -436,12 +436,12 @@
     {
       "id": "p19",
       "title": {
-        "ar": "EggTrip — العودة للمدارس",
-        "en": "EggTrip — Back to School"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "بوست حملة العودة للمدارس",
-        "en": "Back-to-school campaign post"
+        "ar": "",
+        "en": ""
       },
       "category": "post",
       "label": "EGGTRIP",
@@ -451,12 +451,12 @@
     {
       "id": "p20",
       "title": {
-        "ar": "تيكا — الموقع",
-        "en": "Tikka — Location"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "ستوري موقع الفرع في جازان",
-        "en": "Branch location story in Jazan"
+        "ar": "",
+        "en": ""
       },
       "category": "story",
       "label": "TIKKA",
@@ -466,12 +466,12 @@
     {
       "id": "p21",
       "title": {
-        "ar": "Pure — ورشة الفخار",
-        "en": "Pure — Pottery Workshop"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "ستوري ورشة «اصنع كوبك بنفسك»",
-        "en": "Make-your-own-mug workshop story"
+        "ar": "",
+        "en": ""
       },
       "category": "story",
       "label": "AZURA",
@@ -481,12 +481,12 @@
     {
       "id": "p22",
       "title": {
-        "ar": "Royal Choice — شعار",
-        "en": "Royal Choice — Logo"
+        "ar": "",
+        "en": ""
       },
       "desc": {
-        "ar": "تصميم شعار لعلامة Royal Choice",
-        "en": "Logo design for Royal Choice"
+        "ar": "",
+        "en": ""
       },
       "category": "logo",
       "label": "ROYAL",
