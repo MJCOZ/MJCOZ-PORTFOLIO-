@@ -536,7 +536,67 @@
       "category": "story",
       "label": "",
       "color": "#cccccc",
-      "img": ""
+      "img": "assets/1783699717165-wrinkled-silk-fabrics-phone-wallpaper-inspirational-quote-1-.png"
+    },
+    {
+      "id": "p178369984670525",
+      "title": {
+        "ar": "",
+        "en": ""
+      },
+      "desc": {
+        "ar": "",
+        "en": ""
+      },
+      "category": "logo",
+      "label": "",
+      "color": "#CD6857",
+      "img": "assets/1783699757522-0-.jpg"
+    },
+    {
+      "id": "p178369984670526",
+      "title": {
+        "ar": "",
+        "en": ""
+      },
+      "desc": {
+        "ar": "",
+        "en": ""
+      },
+      "category": "post",
+      "label": "",
+      "color": "#FAC675",
+      "img": "assets/1783699790374-cova-0-.jpg"
+    },
+    {
+      "id": "p178369984670527",
+      "title": {
+        "ar": "",
+        "en": ""
+      },
+      "desc": {
+        "ar": "",
+        "en": ""
+      },
+      "category": "post",
+      "label": "",
+      "color": "#2B286B",
+      "img": "assets/1783699814329-matchawdob-0-.jpg"
+    },
+    {
+      "id": "p178369984670528",
+      "title": {
+        "ar": "",
+        "en": ""
+      },
+      "desc": {
+        "ar": "",
+        "en": ""
+      },
+      "category": "branding",
+      "label": "",
+      "color": "#7a1f24",
+      "img": "assets/1783699834543-tika-menu-0-.jpg"
     }
   ],
   "resume": {
