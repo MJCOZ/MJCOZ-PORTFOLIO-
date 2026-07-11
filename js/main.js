@@ -167,14 +167,10 @@
     const r = content.resume || {};
     $("#expList").innerHTML = (r.experience || []).map(timelineItem).join("");
     const edu = $("#eduList"); if (edu) edu.innerHTML = (r.education || []).map(timelineItem).join("");
-    $("#skillsList").innerHTML = (r.skills || []).map(s => `
-      <div class="skill">
-        <div class="skill__top"><span>${esc(t(s.name))}</span><span>${esc(s.pct)}%</span></div>
-        <div class="skill__bar"><i style="width:${Number(s.pct) || 0}%"></i></div>
-      </div>`).join("");
+    $("#skillsList").innerHTML = (r.skills || []).map(s =>
+      `<span class="skill-chip">${esc(t(s.name))}</span>`).join("");
     const cv = $("#cvLink");
     if (r.cvUrl) cv.setAttribute("href", r.cvUrl);
-    animateSkills();
   }
 
   function renderTestimonials() {

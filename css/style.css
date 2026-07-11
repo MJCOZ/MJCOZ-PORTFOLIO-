@@ -392,10 +392,13 @@ html[dir="rtl"] .section__title { text-transform: none; letter-spacing: 0; }
 .timeline__item h4 { font-size: 1.15rem; margin: 8px 0 4px; }
 .timeline__item p { font-size: .98rem; color: #333; }
 
-.skill { margin-bottom: 18px; }
-.skill__top { display: flex; justify-content: space-between; font-family: var(--font-mono); font-weight: 700; font-size: .9rem; margin-bottom: 6px; }
-.skill__bar { height: 18px; background: var(--white); border: 3px solid var(--ink); }
-.skill__bar i { display: block; height: 100%; background: var(--accent); border-inline-end: 3px solid var(--ink); width: 0; transition: width 1s ease; }
+.skills { display: flex; flex-wrap: wrap; gap: 10px; }
+.skill-chip {
+  font-family: var(--font-mono); font-weight: 700; font-size: .9rem;
+  background: var(--white); color: var(--ink);
+  border: 3px solid var(--ink); box-shadow: var(--shadow-sm);
+  padding: 8px 14px;
+}
 
 /* =================== TESTIMONIALS =================== */
 .testi__grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
