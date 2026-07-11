@@ -157,6 +157,17 @@
         "ar": "تصميم قوائم طعام (Menu) ومواد بصرية للمطاعم والكافيهات تبرز منتجاتك بشكل شهيّ.",
         "en": "Menu design and visual materials for restaurants and cafés that make your products look irresistible."
       }
+    },
+    {
+      "num": "D",
+      "title": {
+        "ar": "إنشاء مواقع تعريفية",
+        "en": "Portfolio Websites"
+      },
+      "desc": {
+        "ar": "تصميم وتطوير مواقع تعريفية احترافية لعرض أعمالك وخدماتك — مثل هذا الموقع تماماً.",
+        "en": "Design and development of professional portfolio websites to showcase your work and services — just like this one."
+      }
     }
   ],
   "projects": [
