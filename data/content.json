@@ -230,28 +230,13 @@
         "ar": "",
         "en": ""
       },
-      "category": "branding",
-      "label": "MENU",
-      "color": "#7a2417",
-      "img": "assets/social-5-menu.webp"
-    },
-    {
-      "id": "p6",
-      "title": {
-        "ar": "",
-        "en": ""
-      },
-      "desc": {
-        "ar": "",
-        "en": ""
-      },
       "category": "story",
       "label": "PURE",
       "color": "#3f4a3f",
       "img": "assets/work-pure-shipping.webp"
     },
     {
-      "id": "p7",
+      "id": "p6",
       "title": {
         "ar": "",
         "en": ""
@@ -266,7 +251,7 @@
       "img": "assets/work-ajinah-eid.webp"
     },
     {
-      "id": "p8",
+      "id": "p7",
       "title": {
         "ar": "",
         "en": ""
@@ -281,7 +266,7 @@
       "img": "assets/work-smokeland-nationalday.webp"
     },
     {
-      "id": "p9",
+      "id": "p8",
       "title": {
         "ar": "",
         "en": ""
@@ -296,7 +281,7 @@
       "img": "assets/work-matcha.webp"
     },
     {
-      "id": "p10",
+      "id": "p9",
       "title": {
         "ar": "",
         "en": ""
@@ -311,7 +296,7 @@
       "img": "assets/work-smokeland-hilal.webp"
     },
     {
-      "id": "p11",
+      "id": "p10",
       "title": {
         "ar": "",
         "en": ""
@@ -326,7 +311,7 @@
       "img": "assets/work-matcha-tennis.webp"
     },
     {
-      "id": "p12",
+      "id": "p11",
       "title": {
         "ar": "",
         "en": ""
@@ -341,7 +326,7 @@
       "img": "assets/work-matcha-panda.webp"
     },
     {
-      "id": "p13",
+      "id": "p12",
       "title": {
         "ar": "",
         "en": ""
@@ -356,7 +341,7 @@
       "img": "assets/work-pure-furniture.webp"
     },
     {
-      "id": "p14",
+      "id": "p13",
       "title": {
         "ar": "",
         "en": ""
@@ -371,7 +356,7 @@
       "img": "assets/work-smokeland-eid.webp"
     },
     {
-      "id": "p15",
+      "id": "p14",
       "title": {
         "ar": "",
         "en": ""
@@ -386,7 +371,7 @@
       "img": "assets/work-teek-samosa.webp"
     },
     {
-      "id": "p16",
+      "id": "p15",
       "title": {
         "ar": "",
         "en": ""
@@ -401,7 +386,7 @@
       "img": "assets/work-pure-tabby.webp"
     },
     {
-      "id": "p17",
+      "id": "p16",
       "title": {
         "ar": "",
         "en": ""
@@ -416,7 +401,7 @@
       "img": "assets/work-matcha-eid.webp"
     },
     {
-      "id": "p18",
+      "id": "p17",
       "title": {
         "ar": "",
         "en": ""
@@ -431,7 +416,7 @@
       "img": "assets/work-tikka-hours.webp"
     },
     {
-      "id": "p19",
+      "id": "p18",
       "title": {
         "ar": "",
         "en": ""
@@ -446,7 +431,7 @@
       "img": "assets/work-eggtrip-school.webp"
     },
     {
-      "id": "p20",
+      "id": "p19",
       "title": {
         "ar": "",
         "en": ""
@@ -461,7 +446,7 @@
       "img": "assets/work-tikka-location.webp"
     },
     {
-      "id": "p21",
+      "id": "p20",
       "title": {
         "ar": "",
         "en": ""
@@ -476,7 +461,7 @@
       "img": "assets/work-pure-pottery.webp"
     },
     {
-      "id": "p22",
+      "id": "p21",
       "title": {
         "ar": "",
         "en": ""
@@ -491,7 +476,7 @@
       "img": "assets/work-royal-logo.webp"
     },
     {
-      "id": "p178369971723622",
+      "id": "p22",
       "title": {
         "ar": "",
         "en": ""
@@ -506,7 +491,7 @@
       "img": "assets/1783699700497-.png"
     },
     {
-      "id": "p178369971723623",
+      "id": "p178369971723622",
       "title": {
         "ar": "",
         "en": ""
@@ -521,7 +506,7 @@
       "img": "assets/1783699709169-wrinkled-silk-fabrics-phone-wallpaper-inspirational-quote.png"
     },
     {
-      "id": "p178369971723624",
+      "id": "p178369971723623",
       "title": {
         "ar": "",
         "en": ""
@@ -536,7 +521,7 @@
       "img": "assets/1783699717165-wrinkled-silk-fabrics-phone-wallpaper-inspirational-quote-1-.png"
     },
     {
-      "id": "p178369984670525",
+      "id": "p178369971723624",
       "title": {
         "ar": "",
         "en": ""
@@ -551,7 +536,7 @@
       "img": "assets/1783699757522-0-.jpg"
     },
     {
-      "id": "p178369984670526",
+      "id": "p178369984670525",
       "title": {
         "ar": "",
         "en": ""
@@ -566,7 +551,7 @@
       "img": "assets/1783699790374-cova-0-.jpg"
     },
     {
-      "id": "p178369984670527",
+      "id": "p178369984670526",
       "title": {
         "ar": "",
         "en": ""
@@ -581,7 +566,7 @@
       "img": "assets/1783699814329-matchawdob-0-.jpg"
     },
     {
-      "id": "p178369984670528",
+      "id": "p178369984670527",
       "title": {
         "ar": "",
         "en": ""
