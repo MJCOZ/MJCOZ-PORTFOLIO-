@@ -472,4 +472,7 @@ html[dir="rtl"] .section__title { text-transform: none; letter-spacing: 0; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; }
+  /* keep the decorative top ticker scrolling even with reduced motion */
+  .marquee__track { animation: scroll 40s linear infinite !important; }
+  html[dir="rtl"] .marquee__track { animation-direction: reverse !important; }
 }
