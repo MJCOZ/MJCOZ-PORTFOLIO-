@@ -269,8 +269,58 @@
     // REVIEWS (client comments — moderation)
     root.appendChild(reviewsPanel());
 
+    // ANALYTICS (visitor stats)
+    root.appendChild(analyticsPanel());
+
     // open the first panel by default
     const first = root.querySelector(".panel"); if (first) first.classList.add("is-open");
+  }
+
+  /* ---------- visitor analytics panel ---------- */
+  function analyticsPanel() {
+    const body = el("div", { class: "panel__body" });
+    const wrap = el("p", { class: "muted", text: "جارٍ التحميل…" });
+    body.appendChild(wrap);
+    fetch("/api/analytics", { headers: { Authorization: "Bearer " + token } })
+      .then(r => r.status === 401 ? forceLogout() : r.json())
+      .then(a => { if (a) renderA(a); })
+      .catch(() => wrap.textContent = "تعذّر تحميل الإحصائيات.");
+    function renderA(a) {
+      wrap.remove();
+      const tiles = el("div", { class: "stat-tiles" });
+      const tile = (label, val) => el("div", { class: "stat-tile" }, [
+        el("div", { class: "stat-tile__num", text: String(val) }), el("div", { class: "stat-tile__lbl", text: label })
+      ]);
+      tiles.appendChild(tile("إجمالي الزوّار", a.uniqueTotal));
+      tiles.appendChild(tile("إجمالي الزيارات", a.total));
+      tiles.appendChild(tile("زوّار اليوم", a.todayVisitors));
+      tiles.appendChild(tile("زيارات اليوم", a.today));
+      body.appendChild(tiles);
+      body.appendChild(el("h3", { class: "a-sub", text: "آخر 7 أيام (زيارات)" }));
+      const max = Math.max(1, ...a.last7.map(d => d.views));
+      const bars = el("div", { class: "mini-bars" });
+      a.last7.forEach(d => {
+        const fill = el("i"); fill.style.height = Math.round((d.views / max) * 66 + 3) + "px";
+        bars.appendChild(el("div", { class: "mini-col" }, [
+          el("span", { class: "mini-val", text: String(d.views) }),
+          el("div", { class: "mini-bar" }, [fill]),
+          el("span", { class: "mini-date", text: d.date.slice(5) })
+        ]));
+      });
+      body.appendChild(bars);
+      if (a.pages && a.pages.length) {
+        body.appendChild(el("h3", { class: "a-sub", text: "أكثر الصفحات" }));
+        a.pages.forEach(pg => body.appendChild(el("div", { class: "page-row" }, [
+          el("span", { text: pg.path === "/" ? "الرئيسية" : pg.path }), el("strong", { text: String(pg.n) })
+        ])));
+      }
+      body.appendChild(el("p", { class: "muted", text: "زائر يومي واحد لكل جهاز • تُحفظ دورياً" }));
+    }
+    const head = el("div", { class: "panel__head", onclick: () => p.classList.toggle("is-open") }, [
+      el("h2", { text: "إحصائيات الزوار 📊" }), el("span", { class: "panel__toggle", text: "▾" })
+    ]);
+    const p = el("div", { class: "panel" }, [head, body]);
+    return p;
   }
 
   /* ---------- reviews moderation panel ---------- */

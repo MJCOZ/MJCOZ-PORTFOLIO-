@@ -20,6 +20,7 @@ const SEED_CONTENT = path.join(ROOT, "data", "content.json");
 const CONTENT_FILE = process.env.CONTENT_FILE || SEED_CONTENT;
 const UPLOAD_DIR   = process.env.UPLOAD_DIR   || path.join(ROOT, "assets");
 const REVIEWS_FILE = process.env.REVIEWS_FILE || path.join(ROOT, "data", "reviews.json");
+const ANALYTICS_FILE = process.env.ANALYTICS_FILE || path.join(ROOT, "data", "analytics.json");
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "change-me";
 const ADMIN_SECRET   = process.env.ADMIN_SECRET   || crypto.randomBytes(24).toString("hex");
@@ -79,6 +80,7 @@ function ensureStorage() {
       fs.writeFileSync(CONTENT_FILE, seed);
     }
     if (!fs.existsSync(REVIEWS_FILE)) fs.writeFileSync(REVIEWS_FILE, '{"reviews":[]}');
+    if (!fs.existsSync(ANALYTICS_FILE)) fs.writeFileSync(ANALYTICS_FILE, '{"total":0,"days":{},"pages":{},"uniqueTotal":0,"uDays":{}}');
     DATA_READY = true;
   } catch (e) {
     DATA_READY = false;
@@ -123,6 +125,44 @@ function writeReviews(list) {
   ghCommit("data/reviews.json", Buffer.from(json), "reviews: update");
 }
 const reviewRate = new Map(); // ip -> last submit ms (simple anti-spam)
+
+/* ---------- visitor analytics (lightweight) ---------- */
+let stats = { total: 0, days: {}, pages: {}, uniqueTotal: 0, uDays: {} };
+try { stats = Object.assign(stats, JSON.parse(fs.readFileSync(ANALYTICS_FILE, "utf8"))); } catch (e) {}
+let persistTimer = null, lastGh = 0;
+function schedulePersist() {
+  clearTimeout(persistTimer);
+  persistTimer = setTimeout(() => {
+    try { fs.writeFileSync(ANALYTICS_FILE, JSON.stringify(stats)); } catch (e) {}
+    // commit to GitHub at most every 30 min so counts survive restarts without spamming redeploys
+    if (GH_TOKEN && Date.now() - lastGh > 30 * 60 * 1000) {
+      lastGh = Date.now();
+      ghCommit("data/analytics.json", Buffer.from(JSON.stringify(stats, null, 2)), "analytics: update");
+    }
+  }, 4000);
+}
+function countVisit(req, res) {
+  const p = req.path;
+  if (p.startsWith("/api") || p.startsWith("/uploads") || p.startsWith("/admin")) return;
+  // exclude the owner's own visits (set when logging into /admin) so counts reflect real visitors
+  if ((req.headers.cookie || "").includes("mjowner=")) return;
+  const today = new Date().toISOString().slice(0, 10);
+  stats.total = (stats.total || 0) + 1;
+  stats.days[today] = (stats.days[today] || 0) + 1;
+  stats.pages[p] = (stats.pages[p] || 0) + 1;
+  if (!(req.headers.cookie || "").includes("mjv=")) {          // rough unique visitor per day
+    stats.uniqueTotal = (stats.uniqueTotal || 0) + 1;
+    stats.uDays[today] = (stats.uDays[today] || 0) + 1;
+    res.setHeader("Set-Cookie", "mjv=1; Max-Age=86400; Path=/; SameSite=Lax");
+  }
+  schedulePersist();
+}
+app.use((req, res, next) => {
+  if (req.method === "GET" && (req.headers.accept || "").includes("text/html")) {
+    try { countVisit(req, res); } catch (e) {}
+  }
+  next();
+});
 
 /* ---------- uploads (multer) ---------- */
 const storage = multer.diskStorage({
@@ -186,6 +226,8 @@ app.post("/api/login", (req, res) => {
   const ok = password.length === ADMIN_PASSWORD.length &&
     crypto.timingSafeEqual(Buffer.from(password), Buffer.from(ADMIN_PASSWORD));
   if (!ok) return res.status(401).json({ error: "wrong password" });
+  // mark this browser as the owner so their own visits are excluded from visitor analytics
+  res.setHeader("Set-Cookie", "mjowner=1; Max-Age=31536000; Path=/; SameSite=Lax");
   res.json({ token: makeToken() });
 });
 
@@ -241,6 +283,21 @@ app.post("/api/reviews", (req, res) => {
 });
 
 app.get("/api/reviews/all", requireAuth, (req, res) => res.json({ reviews: readReviews() }));
+
+app.get("/api/analytics", requireAuth, (req, res) => {
+  const today = new Date().toISOString().slice(0, 10);
+  const last7 = [];
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date(Date.now() - i * 86400000).toISOString().slice(0, 10);
+    last7.push({ date: d, views: stats.days[d] || 0, visitors: (stats.uDays || {})[d] || 0 });
+  }
+  const pages = Object.entries(stats.pages || {}).sort((a, b) => b[1] - a[1]).slice(0, 6).map(([path, n]) => ({ path, n }));
+  res.json({
+    total: stats.total || 0, uniqueTotal: stats.uniqueTotal || 0,
+    today: stats.days[today] || 0, todayVisitors: (stats.uDays || {})[today] || 0,
+    last7, pages
+  });
+});
 
 app.put("/api/reviews", requireAuth, (req, res) => {
   const list = (req.body && req.body.reviews);
