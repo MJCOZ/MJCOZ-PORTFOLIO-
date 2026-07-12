@@ -220,14 +220,15 @@
   }
 
   /* ---------- marquee (fill any width seamlessly) ---------- */
-  function setupMarquee() {
+  function setupMarquee(retry) {
     const track = document.querySelector(".marquee__track");
     if (!track) return;
     track.querySelectorAll(".marquee__item--clone").forEach(n => n.remove());
     const base = track.querySelector(".marquee__item");
     if (!base) return;
     const baseW = base.getBoundingClientRect().width;
-    if (!baseW) return;
+    // width not ready yet (fonts still loading) → retry so we don't under-fill
+    if (!baseW) { if ((retry || 0) < 25) setTimeout(() => setupMarquee((retry || 0) + 1), 150); return; }
     // each "half" of the track must be at least one viewport wide so the
     // -50% loop never reveals a gap; we then duplicate the half for seamlessness
     const perHalf = Math.max(1, Math.ceil(window.innerWidth / baseW) + 1);
@@ -314,7 +315,9 @@
     }
 
     let rT; window.addEventListener("resize", () => { clearTimeout(rT); rT = setTimeout(setupMarquee, 200); });
-    window.addEventListener("load", setupMarquee);
+    window.addEventListener("load", () => setupMarquee());
+    // recompute once web fonts are ready (item width changes when they load)
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => setupMarquee());
 
     // scroll progress bar
     const progress = $("#scrollProgress");
