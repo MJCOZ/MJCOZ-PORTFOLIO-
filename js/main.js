@@ -405,7 +405,7 @@
         const j = await res.json().catch(() => ({}));
         if (!res.ok) throw new Error(j.error || (isAr ? "تعذّر الإرسال" : "Could not send"));
         rForm.reset();
-        show(isAr ? "شكراً! سيظهر رأيك بعد المراجعة ✓" : "Thanks! Your review will appear after approval ✓", "ok");
+        show(isAr ? "شكراً لمشاركة رأيك الجميل ✓" : "Thanks for sharing your kind review ✓", "ok");
       } catch (err) { show(err.message, "err"); }
     });
   }
