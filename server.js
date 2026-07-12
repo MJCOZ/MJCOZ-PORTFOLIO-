@@ -48,21 +48,25 @@ async function ghCommit(repoPath, buffer, message) {
     Accept: "application/vnd.github+json",
     "User-Agent": "mutaz-portfolio"
   };
-  try {
-    let sha;
-    const cur = await fetch(`${api}?ref=${encodeURIComponent(GH_BRANCH)}`, { headers });
-    if (cur.ok) sha = (await cur.json()).sha;
-    const body = { message, content: buffer.toString("base64"), branch: GH_BRANCH };
-    if (sha) body.sha = sha;
-    const put = await fetch(api, {
-      method: "PUT",
-      headers: { ...headers, "Content-Type": "application/json" },
-      body: JSON.stringify(body)
-    });
-    if (!put.ok) console.error("GitHub commit failed:", repoPath, put.status, await put.text());
-    else console.log("✓ committed to GitHub:", repoPath);
-  } catch (e) {
-    console.error("GitHub commit error:", repoPath, e.message);
+  // retry so a save isn't lost if a request fails mid-redeploy or hits a SHA conflict
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      let sha;
+      const cur = await fetch(`${api}?ref=${encodeURIComponent(GH_BRANCH)}`, { headers });
+      if (cur.ok) sha = (await cur.json()).sha;
+      const body = { message, content: buffer.toString("base64"), branch: GH_BRANCH };
+      if (sha) body.sha = sha;
+      const put = await fetch(api, {
+        method: "PUT",
+        headers: { ...headers, "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+      });
+      if (put.ok) { console.log("✓ committed to GitHub:", repoPath); return; }
+      console.error("GitHub commit failed:", repoPath, put.status, await put.text());
+    } catch (e) {
+      console.error("GitHub commit error:", repoPath, e.message);
+    }
+    await new Promise(r => setTimeout(r, attempt * 2000));
   }
 }
 
@@ -122,7 +126,7 @@ function readReviews() {
 function writeReviews(list) {
   const json = JSON.stringify({ reviews: list }, null, 2);
   try { fs.writeFileSync(REVIEWS_FILE, json); } catch (e) {}
-  ghCommit("data/reviews.json", Buffer.from(json), "reviews: update");
+  return ghCommit("data/reviews.json", Buffer.from(json), "reviews: update");
 }
 const reviewRate = new Map(); // ip -> last submit ms (simple anti-spam)
 
@@ -299,10 +303,11 @@ app.get("/api/analytics", requireAuth, (req, res) => {
   });
 });
 
-app.put("/api/reviews", requireAuth, (req, res) => {
+app.put("/api/reviews", requireAuth, async (req, res) => {
   const list = (req.body && req.body.reviews);
   if (!Array.isArray(list)) return res.status(400).json({ error: "invalid reviews" });
-  writeReviews(list.map(r => ({
+  // wait for the permanent (GitHub) save so "saved ✓" really means saved
+  await writeReviews(list.map(r => ({
     id: String(r.id || "r" + Date.now()), name: String(r.name || "").slice(0, 60),
     text: String(r.text || "").slice(0, 600), approved: !!r.approved, date: String(r.date || "")
   })));
