@@ -192,6 +192,16 @@
           <h2 class="section__title" data-ar="آراء العملاء" data-en="Client Words">آراء العملاء</h2>
         </div>
         <div class="testi__grid" id="testiGrid"></div>
+
+        <form class="review-form" id="reviewForm">
+          <h3 data-ar="أضف رأيك" data-en="Add your review">أضف رأيك</h3>
+          <p class="review-form__note" data-ar="سيظهر رأيك بعد مراجعته." data-en="Your review appears after approval.">سيظهر رأيك بعد مراجعته.</p>
+          <input type="text" name="name" required maxlength="60" data-ph-ar="اسمك" data-ph-en="Your name" placeholder="اسمك" />
+          <textarea name="text" required maxlength="600" rows="3" data-ph-ar="اكتب رأيك..." data-ph-en="Write your review..." placeholder="اكتب رأيك..."></textarea>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true" />
+          <button type="submit" class="btn btn--primary" data-ar="إرسال الرأي →" data-en="Submit review →">إرسال الرأي →</button>
+          <p class="form-note" id="reviewNote" hidden></p>
+        </form>
       </div>
     </section>
 

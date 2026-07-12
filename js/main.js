@@ -174,11 +174,25 @@
   }
 
   function renderTestimonials() {
-    $("#testiGrid").innerHTML = (content.testimonials || []).map(x => `
+    const curated = (content.testimonials || []).map(x => `
       <blockquote class="testi reveal">
         <p>${esc(t(x.text))}</p>
         <footer><strong>${esc(t(x.name))}</strong> — <span>${esc(t(x.role))}</span></footer>
       </blockquote>`).join("");
+    const client = (clientReviews || []).map(r => `
+      <blockquote class="testi reveal">
+        <p>${esc(r.text)}</p>
+        <footer><strong>${esc(r.name)}</strong></footer>
+      </blockquote>`).join("");
+    $("#testiGrid").innerHTML = curated + client;
+    observeReveals();
+  }
+  let clientReviews = [];
+  async function loadReviews() {
+    try {
+      const r = await fetch("/api/reviews", { cache: "no-store" });
+      if (r.ok) { clientReviews = (await r.json()).reviews || []; renderTestimonials(); }
+    } catch (e) {}
   }
 
   function renderContact() {
@@ -206,6 +220,10 @@
     document.querySelectorAll("[data-ar]").forEach(el => {
       const v = el.getAttribute(isAr ? "data-ar" : "data-en");
       if (v !== null) el.textContent = v;
+    });
+    document.querySelectorAll("[data-ph-ar]").forEach(el => {
+      const v = el.getAttribute(isAr ? "data-ph-ar" : "data-ph-en");
+      if (v !== null) el.setAttribute("placeholder", v);
     });
   }
   function setLang(next) {
@@ -373,6 +391,23 @@
       form.reset();
       if (note) { note.textContent = isAr ? "يتم فتح واتساب لإرسال رسالتك ✓" : "Opening WhatsApp to send your message ✓"; note.className = "form-note ok"; note.hidden = false; }
     });
+
+    // client review submission (moderated)
+    const rForm = $("#reviewForm"), rNote = $("#reviewNote");
+    if (rForm) rForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const isAr = lang === "ar";
+      const fd = new FormData(rForm);
+      const payload = { name: (fd.get("name") || "").toString(), text: (fd.get("text") || "").toString(), website: (fd.get("website") || "").toString() };
+      const show = (m, k) => { if (rNote) { rNote.textContent = m; rNote.className = "form-note " + k; rNote.hidden = false; } };
+      try {
+        const res = await fetch("/api/reviews", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
+        const j = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(j.error || (isAr ? "تعذّر الإرسال" : "Could not send"));
+        rForm.reset();
+        show(isAr ? "شكراً! سيظهر رأيك بعد المراجعة ✓" : "Thanks! Your review will appear after approval ✓", "ok");
+      } catch (err) { show(err.message, "err"); }
+    });
   }
 
   /* ---------- init ---------- */
@@ -387,5 +422,6 @@
     }
     setLang(lang);
     if ($("#allGrid")) setWorkFilter(workFilter); // sync active chip + render
+    if ($("#testiGrid")) loadReviews();           // fetch approved client reviews
   })();
 })();

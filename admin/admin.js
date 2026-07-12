@@ -266,8 +266,58 @@
       subhead("واتساب"), el("div", { class: "inline" }, [waD.el, waU.el])
     ));
 
+    // REVIEWS (client comments — moderation)
+    root.appendChild(reviewsPanel());
+
     // open the first panel by default
     const first = root.querySelector(".panel"); if (first) first.classList.add("is-open");
+  }
+
+  /* ---------- reviews moderation panel ---------- */
+  function reviewsPanel() {
+    const body = el("div", { class: "panel__body" });
+    const list = el("div");
+    const info = el("p", { class: "muted", text: "جارٍ التحميل…" });
+    const saveBtn = el("button", { class: "btn btn--primary btn--sm", type: "button" }, ["حفظ التعليقات"]);
+    const note = el("p", { class: "muted" });
+    let rows = [];
+    function render(reviews) {
+      list.innerHTML = ""; rows = [];
+      if (!reviews.length) info.textContent = "لا توجد تعليقات بعد.";
+      else info.textContent = "علّم «معتمد» ليظهر الرأي على الموقع، أو احذفه.";
+      reviews.forEach(rv => {
+        const chk = el("input", { type: "checkbox" }); chk.checked = !!rv.approved;
+        let removed = false;
+        const del = el("button", { class: "btn btn--sm btn--danger", type: "button", onclick: () => { removed = true; row.style.display = "none"; } }, ["حذف"]);
+        const row = el("div", { class: "row" }, [
+          el("div", { class: "row__head" }, [el("strong", { text: (rv.name || "") + " · " + (rv.date || "") }), del]),
+          el("p", { text: rv.text || "", style: "font-size:.95rem;margin-bottom:8px" }),
+          el("label", { class: "check" }, [chk, "معتمد (يظهر على الموقع)"])
+        ]);
+        rows.push({ get: () => removed ? null : { id: rv.id, name: rv.name, text: rv.text, date: rv.date, approved: chk.checked } });
+        list.appendChild(row);
+      });
+    }
+    fetch("/api/reviews/all", { headers: { Authorization: "Bearer " + token } })
+      .then(r => r.status === 401 ? forceLogout() : r.json())
+      .then(j => render((j && j.reviews) || []))
+      .catch(() => info.textContent = "تعذّر تحميل التعليقات.");
+    saveBtn.addEventListener("click", async () => {
+      const reviews = rows.map(r => r.get()).filter(Boolean);
+      note.textContent = "جارٍ الحفظ…";
+      try {
+        const r = await fetch("/api/reviews", { method: "PUT", headers: { "Content-Type": "application/json", Authorization: "Bearer " + token }, body: JSON.stringify({ reviews }) });
+        if (r.status === 401) return forceLogout();
+        if (!r.ok) throw new Error();
+        note.textContent = "تم حفظ التعليقات ✓";
+      } catch (e) { note.textContent = "خطأ في الحفظ."; }
+    });
+    body.appendChild(info); body.appendChild(list); body.appendChild(saveBtn); body.appendChild(note);
+    const head = el("div", { class: "panel__head", onclick: () => p.classList.toggle("is-open") }, [
+      el("h2", { text: "تعليقات العملاء (مراجعة)" }), el("span", { class: "panel__toggle", text: "▾" })
+    ]);
+    const p = el("div", { class: "panel" }, [head, body]);
+    return p;
   }
 
   function collect() {

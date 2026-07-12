@@ -409,6 +409,21 @@ html[dir="rtl"] .section__title { text-transform: none; letter-spacing: 0; }
 .testi p { font-size: 1.1rem; font-weight: 700; margin-bottom: 18px; }
 .testi footer { font-family: var(--font-mono); font-size: .9rem; }
 
+/* add-your-review form */
+.review-form {
+  margin-top: 34px; max-width: 640px;
+  background: var(--white); border: var(--border); box-shadow: var(--shadow); padding: 26px;
+}
+.review-form h3 { font-family: var(--font-display); font-size: 1.4rem; }
+.review-form__note { font-family: var(--font-mono); font-size: .8rem; color: #666; margin: 4px 0 16px; }
+.review-form input:not(.hp), .review-form textarea {
+  width: 100%; font-family: inherit; font-size: 1rem;
+  padding: 12px 14px; border: 3px solid var(--ink); background: var(--bg); margin-bottom: 14px;
+}
+.review-form input:focus, .review-form textarea:focus { outline: none; box-shadow: 4px 4px 0 var(--accent-3); }
+.review-form .btn { width: 100%; }
+.review-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
 /* =================== CONTACT =================== */
 .contact__grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 44px; }
 .contact__lead { font-size: 1.3rem; font-weight: 700; margin-bottom: 28px; }

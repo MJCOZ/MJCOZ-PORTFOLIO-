@@ -19,6 +19,7 @@ const SEED_CONTENT = path.join(ROOT, "data", "content.json");
 // CONTENT_FILE / UPLOAD_DIR can point at a Render persistent disk (e.g. /var/data)
 const CONTENT_FILE = process.env.CONTENT_FILE || SEED_CONTENT;
 const UPLOAD_DIR   = process.env.UPLOAD_DIR   || path.join(ROOT, "assets");
+const REVIEWS_FILE = process.env.REVIEWS_FILE || path.join(ROOT, "data", "reviews.json");
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "change-me";
 const ADMIN_SECRET   = process.env.ADMIN_SECRET   || crypto.randomBytes(24).toString("hex");
@@ -77,6 +78,7 @@ function ensureStorage() {
       const seed = fs.existsSync(SEED_CONTENT) ? fs.readFileSync(SEED_CONTENT, "utf8") : "{}";
       fs.writeFileSync(CONTENT_FILE, seed);
     }
+    if (!fs.existsSync(REVIEWS_FILE)) fs.writeFileSync(REVIEWS_FILE, '{"reviews":[]}');
     DATA_READY = true;
   } catch (e) {
     DATA_READY = false;
@@ -107,7 +109,20 @@ function requireAuth(req, res, next) {
 }
 
 /* ---------- middleware ---------- */
+app.set("trust proxy", 1); // behind Render's proxy — needed for req.ip
 app.use(express.json({ limit: "2mb" }));
+
+/* ---------- client reviews (moderated) ---------- */
+function readReviews() {
+  try { return JSON.parse(fs.readFileSync(REVIEWS_FILE, "utf8")).reviews || []; }
+  catch (e) { return []; }
+}
+function writeReviews(list) {
+  const json = JSON.stringify({ reviews: list }, null, 2);
+  try { fs.writeFileSync(REVIEWS_FILE, json); } catch (e) {}
+  ghCommit("data/reviews.json", Buffer.from(json), "reviews: update");
+}
+const reviewRate = new Map(); // ip -> last submit ms (simple anti-spam)
 
 /* ---------- uploads (multer) ---------- */
 const storage = multer.diskStorage({
@@ -201,6 +216,40 @@ app.post("/api/upload", requireAuth, upload.single("image"), (req, res) => {
     try { ghCommit(repoPath, fs.readFileSync(filePath), "admin: upload " + req.file.filename); } catch (e) {}
   }
   res.json({ path: publicPath });
+});
+
+/* ----- reviews: public read (approved) + submit; admin list + moderate ----- */
+app.get("/api/reviews", (req, res) => {
+  const approved = readReviews().filter(r => r.approved).map(r => ({ name: r.name, text: r.text, date: r.date }));
+  res.json({ reviews: approved });
+});
+
+app.post("/api/reviews", (req, res) => {
+  const { name, text, website } = req.body || {};
+  if (website) return res.json({ ok: true });            // honeypot — silently drop bots
+  const n = (typeof name === "string" ? name : "").trim();
+  const t = (typeof text === "string" ? text : "").trim();
+  if (n.length < 2 || n.length > 60) return res.status(400).json({ error: "الاسم مطلوب" });
+  if (t.length < 3 || t.length > 600) return res.status(400).json({ error: "الرأي مطلوب (حتى 600 حرف)" });
+  const ip = req.ip || "x";
+  if (Date.now() - (reviewRate.get(ip) || 0) < 20000) return res.status(429).json({ error: "الرجاء الانتظار قليلاً" });
+  reviewRate.set(ip, Date.now());
+  const list = readReviews();
+  list.push({ id: "r" + Date.now() + Math.floor(Math.random() * 1000), name: n, text: t, approved: false, date: new Date().toISOString().slice(0, 10) });
+  writeReviews(list);
+  res.json({ ok: true, pending: true });
+});
+
+app.get("/api/reviews/all", requireAuth, (req, res) => res.json({ reviews: readReviews() }));
+
+app.put("/api/reviews", requireAuth, (req, res) => {
+  const list = (req.body && req.body.reviews);
+  if (!Array.isArray(list)) return res.status(400).json({ error: "invalid reviews" });
+  writeReviews(list.map(r => ({
+    id: String(r.id || "r" + Date.now()), name: String(r.name || "").slice(0, 60),
+    text: String(r.text || "").slice(0, 600), approved: !!r.approved, date: String(r.date || "")
+  })));
+  res.json({ ok: true });
 });
 
 /* ---------- static ---------- */
